@@ -1,0 +1,82 @@
+
+.land-info-blood-tranfer {
+    padding: 0px 15px 0px 15px;
+  
+    &.custom-list {
+      padding: 0px 5px 0px 8px;
+    }
+  
+    .item {
+      width: 100%;
+  
+      &.custom-spacing {
+        height: 20px;
+        margin: 32px 0px 12px 0px;
+      }
+  
+      &.custom-spacing-14px {
+        height: 20px;
+        margin: 14px 0px 12px 0px;
+      }
+  
+      .label-edit {
+        text-align: left;
+      }
+  
+      .editor {
+        text-align: right;
+  
+        &.custom-content {
+          float: right;
+          text-align: center;
+          width: auto;
+        }
+  
+        input {
+          width: 7rem;
+          border: none;
+          background: $background-color-8;
+          border-radius: 5px;
+          padding: 5px 5px 5px 11px;
+          font-size: 11px;
+          //margin-right: 10px;
+          margin-bottom: 0.5rem;
+          text-align: left;
+  
+          &.input-full-width {
+            width: 100%;
+          }
+  
+          &:focus {
+            outline: none;
+          }
+        }
+  
+        img {
+          width: 17px;
+          height: 22px;
+          margin-left: 10px;
+        }
+  
+        input.input {
+          width: 154px;
+          border: none;
+          background: $background-color-8;
+          border-radius: 5px;
+          padding: 3px;
+          margin-right: 3px;
+          margin-left: 3px;
+          text-align: right;
+  
+          &.input-full-width {
+            width: 100%;
+          }
+  
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+}
+  

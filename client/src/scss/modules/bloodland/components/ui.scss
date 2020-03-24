@@ -1,0 +1,293 @@
+.break-y {
+  width: 1px;
+  margin: 0px 2px 0px 2px;
+  height: 100%;
+  background: $background-color-1;
+}
+
+.break-x {
+  height: 1px;
+  margin: 2px 2px 2px 2px;
+  width: 100%;
+  background: $background-color-1;
+  clear: both;
+
+  &.break-no-bg {
+    background: none;
+  }
+
+  &.break-margin-5 {
+    margin: 5px 2px 5px 2px;
+  }
+
+  &.break-margin-10 {
+    margin: 10px 2px 10px 2px;
+  }
+
+  &.break-margin-15 {
+    margin: 15px 2px 15px 2px;
+  }
+}
+
+
+
+
+@mixin border-direction() {
+  &.l-bot {
+    border-bottom: $border2;
+  }
+  &.l-top {
+    border-top: $border2;
+  }
+  &.l-left {
+    border-left: $border2;
+  }
+  &.l-right {
+    border-right: $border2;
+  }
+}
+
+
+.load-land {
+  height: 290px;
+  width: 235px;
+  display: -ms-flexbox;
+  display: flex;
+  top: 26%;
+  position: fixed;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #ffffff;
+  z-index: 1000;
+
+  .load__icon {
+    animation: linear load 2s infinite;
+    margin: auto;
+    width: 32px;
+    height: 32px;
+  }
+
+  .load__icon-wrap {
+    margin: auto;
+  }
+
+  & + div {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  @keyframes load {
+    from {
+      transform: rotate(0deg) scale(2);
+    }
+    to {
+      transform: rotate(360deg) scale(2);
+    }
+  }
+
+  &.loaded {
+    animation: ease loaded 0.5s;
+  }
+
+  @keyframes loaded {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+
+.alert-dot {
+  position: absolute;
+  right: 84px;
+  top: 7px;
+  z-index: 9999;
+
+  &.for-btn {
+    right: 123px;
+  }
+
+  &:before {
+    background-color: #fc30596c;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: beforePulse 1.5s infinite;
+  }
+
+  &:after {
+    height: 13px;
+    width: 13px;
+    background-color: #e0536f;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+
+.chat-toggle-btn {
+  width: 45px;
+  height: 45px;
+  background: white;
+  border: $border1;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $background-color-1;
+    border: rgb(163, 32, 36) 1px solid;
+  }
+
+  img {
+    width: 30px;
+    height: auto;
+  }
+}
+
+.key-land {
+  width: 272px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-center {
+  text-align: center !important;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+
+.number-output {
+  border: #666666 1px solid;
+  float: left;
+  width: 100px;
+  padding: 0px 5px 0px 5px;
+  border-radius: 2px;
+}
+
+.lnr {
+  &.number-control {
+    float: left;
+    margin: 5px;
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(0, 0, 0);
+    }
+  }
+}
+
+.csschudo {
+  color: #AC0000;
+  padding: 9px;
+  font-size: 12px;
+}
+
+.notice-info {
+  position: fixed;
+  z-index: 999999;
+  top: 14%;
+  left: 50%;
+  width: 500px;
+  margin-left: -250px;
+  height: 50px;
+  background-color: $background-color-1;
+  opacity: 0.8;
+  // overflow-y: hidden;
+  // overflow-x: hidden;
+  pointer-events: none;
+  padding: 0px 10px 0px 10px;
+
+  marquee {
+    font-family: 'NotoSansMonoCJKkr-Regular';
+    font-size: 31px;
+    font-weight: bolder;
+    color: white;
+  }
+}
+
+.admin-informations{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  /* top: 10px; */
+  /* left: 300px; */
+  z-index: 99999;
+  background-color: white;
+  color: black;
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 3px;
+  text-align: left;
+}
+
+//============================
+
+.translation{
+  font-family: 'Roboto' !important;
+  word-spacing: -1px;
+  // float: 'unset';
+  // padding: 3px;
+}
+.screen-content-error {
+  height: 621px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $font-color-1;
+  font-size: 25px;
+  text-align: center;
+  opacity: 0.7;
+  .warning {
+    text-align: center;
+    margin: 0
+  }
+}
+
+.signal-tree {
+  width: 11px;
+  height: auto;
+  margin: 0px 3px 0px 3px;
+
+  &.margin-reset {
+    margin: 0px;
+  }
+}
+
+
+.check-box {
+  width: 15px;
+  height: 15px;
+  border: $border1;
+  background: white;
+  cursor: pointer;
+  float: left;
+  margin-top: 1px;
+  margin-right: 6px;
+
+  &.checked {
+    background:white url('/images/bloodland-ui/checked-bg.png') center no-repeat;
+  }
+
+  &.hide {
+    opacity: 1;
+    border: $border4;
+    cursor: unset;
+  }
+}

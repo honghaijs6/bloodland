@@ -1,0 +1,60 @@
+  //$text_align :          value text-align                  , canh chỉnh align 
+  //$text_display_option : string 'break' 'hide'             , hien thi xuong dong hay an text
+  //$borders :             mãng (top, bottom, left, right)   , vẽ border cho ô
+  @mixin cell-properties($text_align, $text_display_option, $borders:() ) {
+    padding: 2px 5px 0px 5px;
+    background-color: white;
+    text-align: $text_align;
+  
+    @if($text_display_option == 'break'){
+      word-break: break-word;
+    }
+    @else if($text_display_option == 'hide' ){
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  
+    @each $border in $borders {
+      border-#{$border}:#383838 1px solid;
+    }
+  }
+  
+    //$align :          flex-start flex-end center                 , canh chỉnh align 
+    //$text_display_option : string 'break' 'hide'             , hien thi xuong dong hay an text
+    //$borders :             mãng (top, bottom, left, right)   , vẽ border cho ô
+  @mixin header-cell-properties($align, $text_display_option, $borders:() ) {
+    padding: 0px 5px 0px 5px;
+    min-height: 40px;
+    background-color: white;
+  
+    display: flex;
+    align-items: center;
+    
+    @if ($align == left) {
+      justify-content: flex-start;
+      text-align: $align;
+    }
+    @if ($align == right) {
+      justify-content: flex-end;
+      text-align: $align;
+    }
+    @if ($align == center) {
+      justify-content: $align;
+      text-align: $align;
+    }
+  
+    @if($text_display_option == 'break'){
+      word-break: break-word;
+    }
+    @else if($text_display_option == 'hide' ){
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  
+    @each $border in $borders {
+      border-#{$border}:#383838 1px solid;
+    }
+  }
+  

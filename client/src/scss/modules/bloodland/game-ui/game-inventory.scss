@@ -1,0 +1,178 @@
+.grid-inventory-container {
+  height: 94%;
+  padding: 9px;
+  display: grid;
+  grid-template-rows: repeat(16, 44px);
+  grid-template-columns: repeat(5, 44px);
+
+  .grid-inventory {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    border: 1px solid;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+
+    &:active {
+      cursor: grabbing;
+      cursor: -moz-grabbing;
+      cursor: -webkit-grabbing;
+    }
+
+    img {
+      width: 36px;
+    }
+
+    .quantity {
+      position: absolute;
+      bottom: 0%;
+      right: 1%;
+      height: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1px;
+      width: auto;
+      background: $background-color-1;
+      padding: 2px 3px 1px;
+
+      span {
+        color: white;
+        font-size: 7px;
+      }
+    }
+
+    &:hover {
+      transition: all 0.2s ease;
+      background: rgba(172, 0, 0, 0.5);
+
+      .tooltip-inventory {
+        visibility: visible;
+        position: absolute;
+        top: 41px;
+        right: -6px;
+        z-index: 1;
+        width: 257px;
+        height: auto;
+        background: rgba(45, 45, 45, 0.9);
+        padding: 10px;
+        border-radius: 4px;
+        animation-name: fadeIn;
+        animation-duration: 1s;
+
+        .title-container {
+          display: flex;
+
+          .tooltip-inventory-title {
+            color: #FFEB3B;
+            font-size: 12px;
+            margin-bottom: 6px;
+            margin-right: 6px;
+          }
+        }
+
+        .tooltip-inventory-content {
+          color: white;
+          font-size: 10px;
+        }
+      }
+    }
+
+    .tooltip-inventory {
+      visibility: hidden;
+      position: fixed;
+    }
+  }
+}
+
+.tab-inventory-container {
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.7rem;
+  padding: 9px;
+  border-bottom: 1px solid;
+
+  .tab-inventory {
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid $background-color-1;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+
+    &.active {
+      background: $background-color-1;
+      color: white;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .tooltip-info {
+      position: absolute;
+      left: 0px;
+      top: 26px;
+      width: 11rem;
+      height: auto;
+      text-align: center;
+      @include tooltip-info();
+    }
+
+    &:hover .tooltip-info {
+      visibility: visible;
+      opacity: 1;
+    }
+
+  }
+}
+
+.combine-tree-button-container {
+  height: 7%;
+  width: 100%;
+  display: -ms-flexbox;
+  align-items: center;
+  display: flex;
+  margin-left: 4%;
+
+
+  .combine-tree-button {
+    height: 1.5rem;
+    width: auto;
+    border-radius: 9px;
+    min-width: 5rem;
+    color: #FFFF;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    background: #AC0000;
+    padding: 15px;
+    cursor: pointer;
+    .tooltip-info {
+      position: absolute;
+      left: 41%;
+      top: 97%;
+      width: 11rem;
+      height: auto;
+      text-align: center;
+      @include tooltip-info();
+    }
+    &:hover .tooltip-info {
+      visibility: visible;
+      opacity: 1
+    }
+  }
+}

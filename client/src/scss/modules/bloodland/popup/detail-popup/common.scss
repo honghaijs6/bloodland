@@ -1,0 +1,79 @@
+.popup-container {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 9999999;
+  background: #0000001a;
+  .lnr-custom-close-detail-popup {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: #AC0000;
+    border: #AC0000 3px solid;
+    color: white;
+    border-radius: 20px;
+    font-size: 21px;
+    padding: 4px;
+    cursor: pointer;
+    z-index: 999;
+    &:hover{
+      background: white !important;
+      color: #AC0000 !important;
+      border: #AC0000 3px solid;
+    }
+  }
+  
+.item-btn {
+  width: 200px;
+  height: 26px;
+  border: #CCCCCC 1px solid !important;
+  background: white;
+  color: #6c6d6d;
+  border-radius: 5px;
+  padding: 5px 10px 4px 10px;
+  font-weight: bolder;
+  cursor: pointer;
+  margin: 0px 0px 7px 0px;
+  font-size: 11px;
+  box-shadow: 0px 3px #CCCCCC;
+  -webkit-box-shadow: 0px 3px #CCCCCC;
+  text-align: center;
+
+  .sp-img {
+    float: left;
+
+    img {
+      width: auto;
+      height: 15px;
+      margin-right: 8px;
+    }
+  }
+
+  .sp-name {
+    float: right;
+  }
+
+  &.no-hover{
+    cursor: unset;
+    &:hover {
+      border: #CCCCCC 1px solid !important;
+      background: white;
+      color: #6c6d6d;
+      font-size: 11px;
+      box-shadow: 0px 3px #CCCCCC;
+      -webkit-box-shadow: 0px 3px #CCCCCC;
+    }
+  }
+
+  &:hover {
+    border: #990000 1px solid !important;
+    background: #AC0000;
+    box-shadow: 0px 4px #990000;
+    -webkit-box-shadow: 0px 4px #990000;
+    color: $font-color-2;
+  }
+}
+
+}

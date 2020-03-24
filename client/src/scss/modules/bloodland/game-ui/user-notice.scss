@@ -1,0 +1,182 @@
+.user-notice-ui-screen{
+  padding: 15px 0px 15px 0px;
+  position: relative;
+  height: 632px;
+  overflow-x: hidden;
+  @include custom-scrollbar();
+}
+
+
+.user-notice-warning-screen {
+  height: 589px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #383838;
+  font-size: 25px;
+  text-align: center;
+  opacity: 0.7;
+  .screen-loading{
+    height: 68px;
+    background: #ffffff;
+    z-index: 1000;
+  }
+}
+
+.notice-detail {
+  padding: 5px;
+
+  .notice-title {
+    background: $background-color-1;
+    padding: 5px;
+    border-radius: 20px;
+    text-align: center;
+    margin: 0px 5px 0px 5px;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .notice-content {
+    text-align: justify;
+    word-wrap: break-word;
+    font-size: 11px;
+  }
+}
+.notice-list {
+  padding: 0px;
+
+  li {
+    margin: 0px;
+    text-align: left;
+    list-style: none;
+    word-break: break-all;
+    display: flex;
+    cursor: pointer;
+    font-size: 11px;
+    //noctice
+    .notice-item-title {
+      width: 162px;
+      margin-right: 0px;
+      margin-left: 10px;
+    }
+
+    .notice-item-landmark{
+      width: 162px;
+      margin: 0px;
+      font-size: 13px;
+      color: black;
+    }
+
+    .notice-item-time {
+      width: 70px;
+    }
+
+    //mail-list
+    .mail-item-checkbox {
+      @include check-box();
+    }
+
+    &:hover {
+      background: $background-color-1;
+      color: $font-color-2;
+
+      .mail-item-status-unread, .mail-item-checkbox {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+}
+
+
+.landmark-list {
+  padding: 0px;
+  .landmark-item {
+    width: 100%;
+    margin: 0px;
+    text-align: left;
+    list-style: none;
+    word-break: break-all;
+    display: flex;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 5px 10px 5px 10px;
+    &:hover {
+      background: $background-color-1;
+      color: $font-color-2;
+    }
+    &.selected{
+      color: $background-color-1;
+      background: white;
+      &:hover {
+        background: $background-color-1;
+        color: $font-color-2;
+      }
+    }
+  }
+}
+
+
+.notice-landmark{
+  display: flex;
+  height: 2.5rem;
+  background: rgba(0, 0, 0, 0.61);
+  border-radius: 10px;
+  color: white;
+  position: fixed;
+  z-index: 1024;
+  width: 23rem;
+  top: 8%;
+  left: 62%;
+  box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.4);
+
+  .notice-title{
+    display: -ms-flexbox;
+    display: flex;
+    width: 25%;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: white;
+  }
+  .notice-link{
+    color: white;
+    cursor: pointer;
+    display: -ms-flexbox;
+    display: flex;
+    width: 75%;
+    -ms-flex-align: center;
+    align-items: center;
+    &:hover{
+      color:chocolate;
+    }
+  }
+}
+
+.blood-exchange-trade{
+  position: fixed;
+  z-index: 1024;
+  width: 17rem;
+  top: 3%;
+  left: 62%;
+
+  height: 29px;
+  padding: 7px 10px 5px 10px;
+  word-spacing: 7px;
+  color: white;
+  font-weight: bold;
+  border: #AC0000 1px solid !important;
+  background: #AC0000;
+  -webkit-box-shadow: 0px 2px #930000;
+  box-shadow: 0px 2px #930000;
+  border-radius: 5px;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-shadow: 1px 1px 8px -1px rgba(11, 11, 11, 0.4);
+  span{
+    padding : 0px 5px 0px 5px;
+  }
+}

@@ -1,0 +1,67 @@
+
+.modal{
+  .modal-dialog{
+    &.custom-modal {
+      &.modal--tree-cultivate {
+        @include set-modal-size(580px, 709px);
+
+        .custom-modal-body {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+.inputs-group {
+  display: flex;
+
+  .textinput {
+    width: 32%;
+    padding: 0px 4px 0px 4px;
+
+    input {
+      width: 100%;
+      padding: 5px 10px 5px 10px;
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+}
+
+
+.title-plan-tree-container {
+  width: 84%;
+  margin-left: 46px;
+  margin-bottom: 4px;
+  display: flex;
+
+  .tree-row-title {
+    width: 34%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .tree-available-title {
+    width: 23%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .using-tree-title {
+    width: 23%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .rest-tree-title {
+    width: 23%;
+    display: flex;
+    justify-content: center;
+  }
+}

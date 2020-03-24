@@ -1,0 +1,306 @@
+.my-land-cart-list {
+  padding: 0px;
+
+  &.land-dropping {
+    background-color: $background-color-10;
+  }
+
+  .error-alert {
+    font-size: 10px;
+    color: red;
+    margin: 4px 0px 4px 0px;
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  .item {
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    padding: 0px 10px 0px 10px;
+    // flex-direction: column;
+
+    &.fixed-height {
+      height: 18px;
+      // height: auto;
+      display: flex;
+      // flex-direction: column;
+
+    }
+
+    .function-container {
+      display: flex;
+
+    }
+
+    .checkbox {
+      margin-top: 2px;
+      margin-left: 11px;
+      width: 15px;
+      height: 15px;
+      border: $border1;
+      background: white;
+      cursor: pointer;
+      flex-shrink: 0;
+      flex-grow: 0;
+
+      &.checked {
+        background:white url('/images/bloodland-ui/checked-bg.png') center no-repeat;
+      }
+
+      &.hide {
+        opacity: 1;
+        border: $border4;
+        cursor: unset;
+      }
+    }
+
+    @include no-content();
+
+    &.item-width-125per {
+      width: 125%;
+    }
+
+    &.item-padding-ver-3px {
+      padding: 3px 10px 3px 10px;
+    }
+
+    &.borderBottom {
+      border-bottom: $border2;
+    }
+
+
+    .item-content {
+      font-size: 11px;
+
+      &.folder {
+        font-size: 14px;
+      }
+
+      @mixin item-col-props($width) {
+        min-width: $width;
+        width: $width;
+        max-width: $width;
+        float: left;
+        word-break: break-all;
+        cursor: pointer;
+        //vuong add
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        // white-space: nowrap;
+        div.child-hover {
+          margin-left: 8px;
+          line-height: 20px;
+          width: $width;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          &.folder-color {
+            color: $font-color-5;
+          }
+
+          &.select-all {
+            font-size: 12px;
+          }
+
+          &:hover {
+            color: $font-color-5;
+          }
+
+          &.highlight-child {
+            color: $font-color-5;
+          }
+        }
+        span.child-hover {
+          margin-left: 8px;
+          line-height: 20px;
+          width: $width;
+
+          &.folder-color {
+            color: $font-color-5;
+          }
+
+          &:hover {
+            color: $font-color-5;
+          }
+
+          &.highlight-child {
+            color: $font-color-5;
+          }
+        }
+        span.select-all-hover {
+          margin-left: 8px;
+          line-height: 20px;
+          letter-spacing: 2px;
+          font-size: 12px;
+
+          &:hover {
+            color: $font-color-5;
+          }
+        }
+        &.borderRight {
+          border-right: $border2;
+        }
+        &.borderLeft {
+          border-left: $border2;
+        }
+        &.item-col-padding-left-10 {
+          padding-left: 10px;
+        }
+        &.item-col-padding-left-30 {
+          padding-left: 30px;
+        }
+        &.item-col-padding-left-50 {
+          padding-left: 50px;
+        }
+        &.item-col-padding-left-80 {
+          padding-left: 80px;
+        }
+        &.item-col-padding-left-100 {
+          padding-left: 100px;
+        }
+      }
+
+      .item-col-165 {
+        @include item-col-props(165px);
+      }
+
+      .item-col-100per {
+        @include item-col-props(100%);
+      }
+
+      .item-col-50per {
+        @include item-col-props(50%);
+      }
+
+      .item-col-30 {
+        @include item-col-props(30px);
+      }
+
+      .item-col-35 {
+        @include item-col-props(35px);
+      }
+
+      .item-col-40 {
+        @include item-col-props(40px);
+      }
+
+      .item-col-50 {
+        @include item-col-props(50px);
+      }
+
+      .item-col-60 {
+        @include item-col-props(60px);
+      }
+
+      .item-col-65 {
+        @include item-col-props(65px);
+      }
+
+      .item-col-68 {
+        @include item-col-props(68px);
+      }
+
+      .item-col-70 {
+        @include item-col-props(70px);
+      }
+
+      .item-col-75 {
+        @include item-col-props(75px);
+      }
+
+      .item-col-80 {
+        @include item-col-props(80px);
+      }
+
+      .item-col-85 {
+        @include item-col-props(85px);
+      }
+
+      .item-col-100 {
+        @include item-col-props(100px);
+      }
+
+      .item-col-115 {
+        @include item-col-props(115px);
+      }
+
+      .item-col-125 {
+        @include item-col-props(125px);
+      }
+
+      .item-col-130 {
+        @include item-col-props(130px);
+      }
+
+      .item-col-135 {
+        @include item-col-props(135px);
+      }
+
+      .item-col-140 {
+        @include item-col-props(140px);
+      }
+
+      .item-col-145 {
+        @include item-col-props(145px);
+      }
+
+      .item-col-150 {
+        @include item-col-props(150px);
+      }
+
+      .item-col-155 {
+        @include item-col-props(155px);
+      }
+
+      .item-col-170 {
+        @include item-col-props(170px);
+      }
+
+      .item-col-200 {
+        @include item-col-props(200px);
+      }
+
+      .item-col-300 {
+        @include item-col-props(300px);
+      }
+
+      .item-col-400 {
+        @include item-col-props(400px);
+      }
+
+      .item-col-460 {
+        @include item-col-props(460px);
+      }
+
+      .item-col-500 {
+        @include item-col-props(500px);
+      }
+    }
+
+    .edit-input {
+      width: 150px;
+      border: $border9;
+      border-radius: 3px;
+      height: 16px;
+      font-size: 11px;
+
+      &.input-100 {
+        width: 100px;
+      }
+
+      &.input-120 {
+        width: 120px;
+      }
+
+      &.input-130 {
+        width: 130px;
+      }
+    }
+
+    .edit-place {
+      @include edit-place();
+    }
+  }
+}

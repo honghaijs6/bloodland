@@ -1,0 +1,125 @@
+.land-trade-history-container{
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 676px;
+  
+  .land-trade-history-tabs{
+    border-bottom: #AC0000 1.5px solid;
+    height: 24px;
+    padding: 0px 4px 0px 4px;
+    font-size: 11px;
+    margin-top: 6px;
+    .tab-item {
+      float: left;
+      padding: 3px 10px 3px 10px;
+      cursor: pointer;
+      &.selected{
+        background: #AC0000;
+        color: white;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        &:hover{
+          color: white;
+        }
+      }
+      &:hover{
+        color: #AC0000;
+      }
+    }
+  }
+
+  .land-trade-history-list{
+    width: 100%;
+    overflow-x: hidden;
+    @include custom-scrollbar();
+
+    $_land_col_width: auto;
+    $_blood_col_width: auto;
+    $_date_col_width: auto;
+  
+    table{
+      width: 100%;
+      font-size: 10px;
+      color: #6c6d6d;
+      @include custom-scrollbar();
+      thead{
+        tr{
+          border-bottom: #383838 1px solid;
+          .land-col{
+            width: $_land_col_width;
+            padding: 6px 1px 6px 1px;
+            text-align: center;
+          }
+          .blood-col{
+            width: $_blood_col_width;
+            padding: 6px 0px 6px 0px;
+            text-align: center;
+          }
+          .date-col{
+            width: $_date_col_width;
+            padding: 6px 1px 6px 1px;
+            text-align: center;
+          }
+          
+        }
+      }
+      tbody{
+        tr{
+          cursor: pointer;
+          &:hover{
+            background: #AC0000;
+            color: white;
+          }
+          .select-all{
+            padding: 3px 5px 3px 5px;
+            cursor: pointer;
+            text-align: left;
+            border-bottom: #383838 1px solid;
+          }
+          .land-col{
+            width: $_land_col_width;
+            padding: 2px 5px 2px 5px;
+            text-align: left;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            cursor: pointer;
+          }
+          .blood-col{
+            width: $_blood_col_width;
+            padding: 2px 5px 2px 0px;
+            text-align: center;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+          }
+          .date-col{
+            width: $_date_col_width;
+            padding: 2px 5px 2px 0px;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+  
+  .action-group{
+    position: relative !important;
+  }
+
+  .land-trade-history-warning {
+    height: 601px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #383838;
+    font-size: 25px;
+    text-align: center;
+    opacity: 0.7;
+    .screen-loading{
+      height: 68px;
+      background: #ffffff;
+      z-index: 1000;
+    }
+  }
+}

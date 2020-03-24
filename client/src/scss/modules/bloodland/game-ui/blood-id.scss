@@ -1,0 +1,246 @@
+
+.blooder-id {
+    width: 215px;
+    height: 140px;
+    margin-left: 9px;
+    position: absolute;
+    //border-bottom: 0 none;
+    //box-shadow: 0 1px 5px rgba(0, 0, 0, 0.26);
+    top: -76px;
+    border-radius: 5px;
+  
+    .blooder-card-header {
+      width: 100%;
+      height: 14%;
+      background: $background-color-1;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+  
+      .header-title {
+        text-transform: uppercase;
+        font-size: 10px;
+        color: $font-color-2;
+        padding: 2px;
+      }
+    }
+  
+    .blooder-card-body {
+      width: 100%;
+      height: 72%;
+      display: flex;
+      background: $background-color-6;
+  
+      .avatar-container {
+        height: 100%;
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+  
+        .blooder-avatar {
+          width: 62px;
+          height: 62px;
+          margin-top: 3px;
+          border: $border7;
+          background: $background-color-13;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          //background: #2a2a31;
+        }
+  
+        .blooder-number {
+          margin-top: 2px;
+          font-size: 10px;
+        }
+  
+        .blooder-name {
+          margin-top: -4px;
+          font-size: 9px;
+        }
+      }
+  
+      .information-container {
+        height: 100%;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+  
+        .date-container {
+          margin-top: 17px;
+          display: flex;
+          width: 100%;
+          color: black;
+          font-size: 8px;
+  
+          .title {
+            width: 54%;
+            margin-top: 1px;
+            font-size: 7px;
+          }
+  
+          .content {
+            width: 46%;
+            margin-top: 1px;
+            font-size: 7px;
+          }
+        }
+  
+        .info-container {
+          width: 100%;
+          height: 15%;
+          display: flex;
+          margin-top: 7px;
+  
+          .icon {
+            display: flex;
+            width: 10%;
+            align-items: center;
+          }
+  
+          .information {
+            width: 90%;
+            display: flex;
+            margin-right: 10px;
+            font-size: 10px;
+            justify-content: flex-end;
+  
+            .info-detail {
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              width: 6rem;
+              text-align: right;
+            }
+          }
+  
+        }
+  
+        //background: #2a2a31;
+      }
+    }
+  
+    .blooder-card-footer {
+      width: 100%;
+      height: 14%;
+      background: $background-color-1;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+  
+      .footer-title {
+        text-transform: uppercase;
+        font-size: 6px;
+        color: $font-color-2;
+        padding: 2px;
+      }
+    }
+  
+    //.id-vs-img {
+    //  float: left;
+    //  padding: 30px 0px 0px 0px;
+    //  width: 59px;
+    //  //background: rgba(0, 183, 255, 0.178);
+    //  img {
+    //    width: 49px !important;
+    //    height: auto !important;
+    //    margin-bottom: 3.4px !important
+    //  }
+    //
+    //  .id-key {
+    //    line-height: 6px;
+    //    word-break: break-all;
+    //    padding: 0px 5px 0px 5px;
+    //
+    //    .id-text {
+    //      margin-top: 5px;
+    //    }
+    //  }
+    //}
+    //
+    //.id-info {
+    //  float: left;
+    //  padding: 41px 6px 0px 0px;
+    //  width: 100px;
+    //  //background: #00800044;
+    //  .id-wallet {
+    //    margin-bottom: 4px;
+    //    margin-left: 18px;
+    //    overflow: hidden;
+    //    text-align: right;
+    //    width: 76px;
+    //  }
+    //
+    //  .id-name {
+    //    margin-bottom: 5px;
+    //    margin-left: 18px;
+    //    overflow: hidden;
+    //    text-align: right;
+    //    width: 76px;
+    //  }
+    //
+    //  .id-email {
+    //    margin-bottom: 14px;
+    //    margin-left: 18px;
+    //    overflow: hidden;
+    //    text-align: right;
+    //    width: 76px;
+    //  }
+    //
+    //  .id-signature {
+    //    img {
+    //      width: 50px !important;
+    //      height: auto;
+    //      margin: 0px;
+    //    }
+    //  }
+    //}
+    //
+    //.id-qr-code {
+    //  float: left;
+    //  margin-top: 30px;
+    //  width: 54px;
+    //  //background: rgba(0, 183, 255, 0.178);
+    //  .qrcode {
+    //    img {
+    //      width: 44px !important;
+    //      height: auto;
+    //      margin-bottom: 4px !important;
+    //    }
+    //  }
+    //
+    //  .numbercode {
+    //    img {
+    //      width: 45px !important;
+    //      height: auto;
+    //      margin-bottom: 2px !important;
+    //    }
+    //  }
+    //
+    //  .keycode {
+    //    font-size: 4px;
+    //    line-height: 5px;
+    //    width: 53px;
+    //    word-break: break-word;
+    //    text-align: center;
+    //  }
+    //
+    //  .date {
+    //    line-height: 7px;
+    //    font-size: 4px;
+    //    margin-top: 4px;
+    //  }
+    //}
+    //
+    //.lnr {
+    //  &.lnr-custom-close {
+    //    cursor: pointer;
+    //    position: absolute;
+    //    font-size: 14px;
+    //    top: 2px;
+    //    right: 2px;
+    //    color: white;
+    //  }
+    //}
+  }
+  

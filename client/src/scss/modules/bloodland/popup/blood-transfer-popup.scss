@@ -1,0 +1,97 @@
+
+.modal{
+  .modal-dialog{
+    &.custom-modal {
+      &.modal--blood-transfer {
+        @include set-modal-size(350px, auto);
+        .custom-modal-body {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+
+.transfer-blood-grid-container{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-rows: 57px;
+  width: 100%;
+  padding: 0px 10px 0px 10px;
+
+  .description-row{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .error-row{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    color: red; 
+  }
+  .title-col{
+    background-color: white;
+    color: rgb(108, 109, 109);
+    word-break: break-word;
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+    &.top-border{
+      border-top: #383838 1px solid ;
+    }
+  }
+  .edit-col {
+    background-color: white;
+    color: rgb(108, 109, 109);
+    font-size: 12px;
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    input{
+      width: auto;
+      max-width: 103px;  
+      height: 19px;
+      border: none;
+      background: #efeded;
+      border-radius: 5px;
+      padding: 5px 5px 5px 11px;
+      font-size: 11px;
+      margin-bottom: 6px;
+      text-align: left;
+    }
+
+    .lnr {
+      &.num-ctrl {
+        margin: 0px 5px 0px 5px;
+        cursor: pointer;
+        font-size: 15px;
+
+        &:hover {
+          color: rgb(0, 0, 0);
+          font-weight: bolder;
+        }
+      }
+    }
+
+
+    &.top-border{
+      border-top: #383838 1px solid ;
+    }
+
+    img{
+      width: 17px;
+      height: 22px;
+      margin-left: 10px;
+    }
+  }
+
+}

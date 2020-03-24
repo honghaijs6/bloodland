@@ -1,0 +1,239 @@
+
+.login {
+  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  overflow-y: auto;
+
+  .login__wrapper {
+    margin: auto;
+    padding: 10px;
+  }
+
+  .login__card {
+    background: url('/images/login/login-bg.png') no-repeat center;
+    padding: 0px 100px 0px 100px;
+    max-width: 432px;
+    width: 432px;
+    height: 509px;
+    position: relative;
+  }
+
+  .login__profile {
+    text-align: center;
+  }
+
+  .login__btns {
+    display: flex;
+    width: calc(100% + 10px);
+    margin: -10px 0 -20px -10px;
+
+    a {
+      margin: 10px 0 20px 10px;
+      white-space: nowrap;
+    }
+  }
+
+  .login__btn {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .login__avatar {
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .login__name {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 15px;
+    margin-top: 5px;
+  }
+
+  .login__sub {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: $color-additional;
+    font-size: 11px;
+    line-height: 15px;
+  }
+
+  .login__forgot-password {
+    position: absolute;
+    font-size: 11px;
+    line-height: 15px;
+    bottom: -18px;
+    right: 0;
+
+    a {
+      color: $color-blue;
+
+      &:hover {
+        color: $color-blue-hover;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .form__form-group--forgot {
+    margin-bottom: 40px;
+  }
+
+  .login__or {
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    position: relative;
+
+    &:before, &:after {
+      content: "";
+      height: 1px;
+      width: calc(50% - 90px);
+      background: #dddddd;
+      position: absolute;
+      top: 10px;
+    }
+
+    &:before {
+      left: 0;
+    }
+
+    &:after {
+      right: 0;
+    }
+  }
+
+  .login__social {
+    text-align: center;
+  }
+
+  .login__social-btn {
+    display: inline-block;
+    height: 38px;
+    width: 38px;
+    border-radius: 50px;
+    padding: 9px;
+    margin-right: 10px;
+    transition: all 0.3s;
+    border: none;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    svg {
+      fill: #ffffff;
+      height: 20px;
+      width: 20px;
+    }
+
+    &.login__social-btn--facebook {
+      background: #D8E3EA;
+
+      &:hover {
+        background: darken(#4766a4, 0%);
+      }
+    }
+
+    &.login__social-btn--google {
+      background: #D8E3EA;
+
+      &:hover {
+        background: darken(#c74d4d, 0%);
+      }
+    }
+  }
+
+  .login__head {    
+    padding-left: 45px;
+    padding-top: 0px;
+    margin-bottom: 20px;
+  }
+
+  .login__logo {
+    background: url('/images/login/avatar.png') no-repeat center;
+    height:144px ;
+    width:144px ;
+  }
+
+  .login__logo-accent {
+    color: $color-blue;
+  }
+
+  .login__have-login {
+    text-align: center;
+    margin-top: 20px;
+
+    a {
+      color: $color-blue;
+      transition: all 0.3s;
+
+      &:hover {
+        color: $color-blue-hover;
+        text-decoration: none;
+      }
+    }
+    
+  }
+
+  .login-form{
+    position: absolute;
+    bottom: 92px;
+    left: 118px;
+    .input{
+      padding: 0px 0px 8px 0px;
+      input{
+        border: none;
+        width: 193px;
+        height: 30px;
+        padding: 0px 0px 0px 38px;
+        &.userName{
+          background: url('/images/login/userName-bg.png') no-repeat center;
+        }
+        &.password{
+          background: url('/images/login/pass-bg.png') no-repeat center;
+        }
+      }
+    }
+    .login-group-btn{
+      display: flex;
+      margin: 10px 0px 20px 0px;
+      button, a{
+        background: url('/images/login/login-btn.png') no-repeat center;
+        width: 70px;
+        height: 30px;
+        border: none;
+        text-decoration: none;
+        color:#5ccaff;
+        font-weight: bolder;
+        font-size: 11px;
+        margin-left: 20px;
+        cursor: pointer;
+        &:hover{
+          background: url('/images/login/login-btn-hover.png') no-repeat center;
+        }
+      }
+      a{
+        padding: 8px;
+        text-align: center;
+      }
+    }
+   
+  }
+
+  &.login--photo {
+    background: url(/images/404/bg_404.png) no-repeat center;
+    background-size: cover;
+
+    .login__card {
+      background-color: rgba(0, 10, 16, 0.8);
+      color: #ffffff;
+    }
+
+  }
+}

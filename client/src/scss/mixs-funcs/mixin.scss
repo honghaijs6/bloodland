@@ -1,0 +1,414 @@
+html {
+  overflow: hidden;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+  supported by Chrome and Opera */
+}
+
+img {
+  pointer-events: none;
+}
+
+@font-face {
+  font-family: 'GodoB';
+  src: url("/fonts/GodoB.ttf");
+}
+
+@font-face {
+  font-family: 'GodoM';
+  src: url("/fonts/GodoM.ttf");
+}
+
+@font-face {
+  font-family: 'digital-7';
+  src: url("/fonts/digital-7.ttf");
+}
+
+@font-face {
+  font-family: 'NotoSansMonoCJKkr-Regular';
+  src: url("/fonts/NotoSansMonoCJKkr-Regular.otf");
+}
+
+
+$tranform_second: 0.5s;
+$trasition_hover_time: 0.3s;
+
+
+@function property-value($property, $selector: null) {
+  @return $magic;
+}
+
+@mixin changing-after-action() {
+  img {
+    filter: brightness(0) invert(1);
+
+    &.no-brightness {
+      filter: none;
+    }
+  }
+  background: $background-color-1;
+  color: $font-color-2;
+}
+
+@mixin height-screen-content($wish-height) {
+  $this: &;
+  height: calc(100% - #{$wish-height});
+  height: -webkit-calc(100% - #{$wish-height});
+  height: -moz-calc(100% - #{$wish-height});
+}
+
+@mixin custom-scrollbar() {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #c5c5c5;
+    transition: all 2s linear;
+    border-radius: 10px;
+    //border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    //background-color: $background-color-2;
+    border: #ffffff 1px solid; 
+  }
+}
+
+@mixin get-font() {
+  font-family: 'GodoB';
+  color: $font-color;
+}
+
+@mixin check-box() {
+  width: 15px;
+  height: 15px;
+  border: $border1;
+  background: white;
+  margin-right: 5px;
+  cursor: pointer;
+  flex-shrink: 0;
+  flex-grow: 0;
+  &.checked {
+    background:white url('/images/bloodland-ui/checked-bg.png') center no-repeat;
+  }
+  &.hide {
+    opacity: 1;
+    border: $border4;
+    cursor: unset;
+  }
+}
+
+@mixin tooltip-support() {
+  background-color: $background-color-5;
+  color: $font-color-2;
+  text-align: left;
+  border-radius: 6px;
+  padding: 5px 10px 5px 10px;
+  position: absolute;
+  z-index: 1;
+  // opacity: 0;
+  // transition: opacity .6s;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: $border5;
+  }
+}
+
+@mixin tooltip-info() {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.877);
+  border-radius: 3px;
+  padding: 7px 7px 7px 7px;
+  z-index: 1;
+  font-size: 12px;
+  pointer-events: none;
+  margin: 5px 0 0 0;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  visibility:hidden;
+  opacity:0;
+  transition:visibility 0.5s linear,opacity 0.5s linear;
+  b{
+    color: yellow;
+    font-weight: normal;
+  }
+}
+
+@mixin tooltip-info-rail-scroll() {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.877);
+  border-radius: 3px;
+  padding: 7px 7px 7px 7px;
+  z-index: 1;
+  font-size: 12px;
+  margin: 15px 3px 0 15px;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  visibility:hidden;
+  opacity:0;
+  transition:visibility 0.1s linear,opacity 0.1s linear;
+  b{
+    color: yellow;
+    font-weight: normal;
+  }
+}
+
+@mixin action-group-button() {
+  button {
+    position: relative;
+    padding: 2px 1px 2px 1px;
+    border: none;
+    cursor: pointer;
+    color: #6c6d6d;
+    font-weight: bold;
+    font-size: 10px;
+    margin-right: 3px;
+    background: #dddddd;
+
+    .tooltip-support {
+      @include tooltip-support();
+      top: -42px;
+      left: 0px;
+    }
+
+    img {
+      height: 12px;
+      width: auto;
+      margin-bottom: 5px;
+    }
+
+    &:hover {
+      @include changing-after-action();
+    }
+
+    .tooltip-info {
+      position: absolute;
+      left: 0px;
+      top: 37px;
+      width: 9rem;
+      height: auto;
+      text-align: center;
+      @include tooltip-info();
+   }
+
+   &:hover .tooltip-info {
+     visibility:visible;
+     opacity:1;
+   }
+
+  }
+}
+
+@mixin button-rail-scroll() {
+  button {
+    position: relative;
+    min-width: 3rem;
+    width: auto;
+    text-align: center;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    color: $font-color;
+    font-weight: bold;
+    font-size: 10px;
+    margin-right: 3px;
+
+    img {
+      height: 14px;
+      width: auto;
+      margin-bottom: 5px;
+    }
+    .tooltip-desc {
+      position: fixed;
+      text-align: left;
+      height: auto;
+      @include tooltip-info-rail-scroll();
+    }
+
+    &:hover {
+      @include changing-after-action();
+    }
+    &:hover .tooltip-desc {
+      visibility:visible;
+      opacity:1
+    }
+
+  }
+}
+@mixin drop-shadow-img($color) {
+  -webkit-filter: drop-shadow(1px 1px 0 $color) drop-shadow(-1px -1px 0 $color);
+  filter: drop-shadow(1px 1px 0 $color) drop-shadow(-1px -1px 0 $color);
+}
+
+
+
+$offset-height: 40px;
+$li-padding: 5px 0px 2px 0px;
+
+
+@mixin no-content() {
+  &.no-content {
+    cursor: unset;
+
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+
+
+@mixin edit-place() {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  z-index: 99999;
+  position: relative;
+  top: 2px;
+
+  &.rename-btn {
+    background: url('/images/bloodland-ui/edit-pen.svg') no-repeat center center;
+
+    &:hover {
+      background: url('/images/bloodland-ui/edit-pen-hover.svg') no-repeat center center;
+    }
+  }
+
+  &.confirm-btn {
+    background: url('/images/bloodland-ui/rename-confirm.png') no-repeat left center;
+
+    &:hover {
+      background: url('/images/bloodland-ui/rename-confirm-hover.png') no-repeat left center;
+    }
+  }
+
+  &.cancel-btn {
+    background: url('/images/bloodland-ui/rename-cancel-btn.png') no-repeat left center;
+    margin-left: 12px;
+    margin-right: 6px;
+
+    &:hover {
+      background: url('/images/bloodland-ui/rename-cancel-btn-hover.png') no-repeat left center;
+    }
+  }
+}
+
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@mixin fade-in($time) {
+  -webkit-animation: fadein $time; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein $time; /* Firefox < 16 */
+  -ms-animation: fadein $time; /* Internet Explorer */
+  -o-animation: fadein $time; /* Opera < 12.1 */
+  animation: fadein $time;
+}
+
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@mixin border-direction() {
+  &.l-bot {
+    border-bottom: $border2;
+  }
+  &.l-top {
+    border-top: $border2;
+  }
+  &.l-left {
+    border-left: $border2;
+  }
+  &.l-right {
+    border-right: $border2;
+  }
+}
+
+@mixin set-modal-size($width,$height) {
+  width: $width;
+  .modal-content {
+    height: $height;
+  }
+}

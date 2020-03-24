@@ -1,0 +1,328 @@
+.game-tools{
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+  .search-field {
+    margin-bottom: 10px;
+    width: 19rem;
+    margin-left: auto;
+    margin-right: auto;
+    .MuiInput-input-163 {
+        height: 1rem !important;
+    }
+    //.le-inputContainer-5{
+    //  min-height: 0 !important;
+    //}
+  }
+
+  &.minimap-expanding{
+    transform: translateX(-18%);
+    .search-field{
+      margin-left: 0;
+    }
+  }
+  
+  .game-functions {
+    width: 100%;
+    text-align: center;
+    .btn {
+      &.btn-icon {
+        width: 36px;
+        border-radius: 0;
+        height: 36px;
+        background: #fff;
+        padding: 3px 5px 1px 7px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        &:hover{
+          background: #5CC8FF;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+          border-radius: 15px;
+          div{
+            filter: brightness(0) invert(1);
+          }
+        }
+        &.selected {
+          background: #5CC8FF;
+        }
+  
+        img {
+          width: 20px;
+        }
+
+        @mixin btn-attr() {
+          width: 20px;
+          height: 20px;
+          background-size: contain;
+          
+          &:hover {
+            filter: brightness(0) invert(1);
+          }
+  
+          &.selected {
+            border: none;
+            filter: brightness(0) invert(1);
+          }
+        }
+        .none-ico {
+          background: url('/images/bloodland-ui/peace-ico-bg.png') no-repeat;
+          @include btn-attr();
+        }
+  
+        .multiSelect-ico {
+          background: url('/images/bloodland-ui/vungchon-ico-bg.png') no-repeat;
+          @include btn-attr();
+        }
+  
+        .single-ico {
+          background: url('/images/bloodland-ui/chonnhieu-ico-bg.png') no-repeat;
+          @include btn-attr();
+        }
+  
+        &::before {
+          background: none;
+        }
+      }
+    }
+    .game-func-btn{
+      border: none;
+      padding: 0px;
+      cursor: pointer;
+      margin-right: 5px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      width: 37px;
+      height: 37px;
+      position: relative;
+      .tooltip-info {
+         width: 9rem;
+        height: auto;
+        color: #fff;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.753);
+        border-radius: 3px;
+        padding: 7px 7px 7px 7px;
+        position: absolute;
+        z-index: 1;
+        font-size: 12px;
+        margin: 5px 0 0 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        visibility:hidden;
+        opacity:0;
+        transition:visibility 0.5s linear,opacity 0.5s linear;
+        pointer-events: none;
+        b{
+          color: yellow;
+        }
+      }
+      &:hover .tooltip-info {
+        visibility:visible;
+        opacity:1;
+      }
+      img{
+          width: 37px;
+          height: 37px;
+          // transition: all 0.5s ease-in-out 0s;
+          // perspective: 500;
+          // &:hover{
+          //   transform: rotateY(360deg);
+          //   -webkit-transform: rotateY(360deg);
+          //   -moz-transform: rotateY(360deg);
+          //   -ms-transform: rotateY(360deg);
+          //   -o-transform: rotateY(360deg);
+          // }
+      }
+      &.deactive{
+        img{
+          filter: brightness(0.7);
+        }
+      }
+
+    }
+  }
+
+
+}
+
+@media screen and (max-width: 521px) {
+  .game-tools{
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+    .search-field {
+      background: white;
+      margin-bottom: 10px;
+      width: 260px;
+      margin-left: auto;
+      margin-right: auto;
+      input {
+        border: 0;
+        width: 14.5rem;
+        height: 2rem;
+        padding: 0 10px;
+        border-radius: 5px;
+        margin: 10px;
+        //&:focus {
+        //
+        //}
+      }
+      .search-location-btn {
+        background: white;
+        width: 60px;
+        height: 2rem;
+        float: right;
+        margin: 10px 10px 10px -10px;
+        border-radius: 0;
+        border: 1px solid silver;
+        &::before{
+          background: none;
+        }
+      }
+    }
+  
+    &.minimap-expanding{
+      transform: translateX(-18%);
+      .search-field{
+        margin-left: 0;
+      }
+    }
+    
+    .game-functions {
+      width: 100%;
+      text-align: center;
+      .btn {
+        &.btn-icon {
+          width: 36px;
+          border-radius: 0;
+          height: 36px;
+          background: #fff;
+          padding: 3px 5px 1px 7px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          &:hover{
+            background: #5CC8FF;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+            border-radius: 15px;
+            div{
+              filter: brightness(0) invert(1);
+            }
+          }
+          &.selected {
+            background: #5CC8FF;
+          }
+    
+          img {
+            width: 20px;
+          }
+  
+          @mixin btn-attr() {
+            width: 20px;
+            height: 20px;
+            background-size: contain;
+            
+            &:hover {
+              filter: brightness(0) invert(1);
+            }
+    
+            &.selected {
+              border: none;
+              filter: brightness(0) invert(1);
+            }
+          }
+          .none-ico {
+            background: url('/images/bloodland-ui/peace-ico-bg.png') no-repeat;
+            @include btn-attr();
+          }
+    
+          .multiSelect-ico {
+            background: url('/images/bloodland-ui/vungchon-ico-bg.png') no-repeat;
+            @include btn-attr();
+          }
+    
+          .single-ico {
+            background: url('/images/bloodland-ui/chonnhieu-ico-bg.png') no-repeat;
+            @include btn-attr();
+          }
+    
+          &::before {
+            background: none;
+          }
+        }
+      }
+      .game-func-btn{
+        border: none;
+        padding: 0px;
+        cursor: pointer;
+        margin-right: 5px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        width: 37px;
+        height: 37px;
+        margin-bottom: 10px;
+        .tooltiptext {
+          //visibility: hidden;
+          // width: auto;
+          height: auto;
+          color: #fff;
+          text-align: center;
+          background-color: rgba(0, 0, 0, 0.753);
+          border-radius: 3px;
+          padding: 7px 7px 7px 7px;
+          position: relative;
+          z-index: 1;
+          font-size: 12px;
+          margin: 5px 0 0 0;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+      visibility:hidden;
+      opacity:0;
+      transition:visibility 0.5s linear,opacity 0.5s linear;
+          // &::after {
+          //     content: "";
+          //     position: absolute;
+          //     top: 100%;
+          //     left: 15%;
+          //     margin-left: -5px;
+          //     border-width: 5px;
+          //     border-style: solid;
+          //     border-color: rgba(0, 0, 0, 0.753) transparent transparent transparent;
+          // }
+        }
+        &:hover .tooltiptext {
+          visibility:visible;
+          opacity:1;
+        }
+        img{
+            width: 37px;
+            height: 37px;
+            // transition: all 0.5s ease-in-out 0s;
+            // perspective: 500;
+            &:hover{
+              // transform: rotateY(360deg);
+              // -webkit-transform: rotateY(360deg);
+              // -moz-transform: rotateY(360deg);
+              // -ms-transform: rotateY(360deg);
+              // -o-transform: rotateY(360deg);
+            }
+        }
+        &.deactive{
+          img{
+            filter: brightness(0.7);
+          }
+        }
+  
+      }
+    }
+  }
+}

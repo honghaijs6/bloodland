@@ -1,0 +1,41 @@
+.gifts-list {
+    padding: 30px 0px 30px 30px;
+    @include custom-scrollbar();
+    overflow-y: auto;
+    height: 510px;
+  
+    .gift-item {
+      width: 125px;
+      height: 62px;
+      border: #990000 1px solid !important;
+      background: #AC0000;
+      box-shadow: 0px 2px #990000;
+      -webkit-box-shadow: 0px 5px #990000;
+      float: left;
+      border-radius: 10px;
+      padding: 5px;
+      margin: 0px 6px 12px 1px;
+  
+      .gift-title {
+        text-align: center;
+        span{
+          color: white;
+        }
+      }
+  
+      .gift-content {
+        color: white;
+        font-size: 18px;
+  
+        img {
+          width: auto;
+          height: 30px;
+        }
+  
+        span {
+          margin: 0px 0px 0px 0px;
+        }
+      }
+    }
+  }
+  

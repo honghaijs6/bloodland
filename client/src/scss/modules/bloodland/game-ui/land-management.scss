@@ -1,0 +1,224 @@
+.myland-grid-container{
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  height: 676px;
+    
+  .myland-amount-grid-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-auto-rows: 39px;
+    width: 100%;
+    border-bottom: #a7a7a7 1px solid;
+    .col{
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .plant-simulation-button-group-grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-auto-rows: auto;
+    width: 100%;
+    border-bottom: #a7a7a7 1px solid;
+    button{
+      position: relative;
+      min-width: 3rem;
+      text-align: center;
+      padding: 5px;
+      border: none;
+      cursor: pointer;
+      color: #6c6d6d;
+      font-weight: bold;
+      font-size: 10px;
+      background: transparent;
+      img {
+          height: 14px;
+          width: auto;
+          margin-bottom: 5px;
+      }
+      
+      .tooltip-info {
+        position: absolute;
+        left: -11px;
+        bottom: 44px;
+        width: 8rem;  
+        height: auto;
+        text-align: center;
+        @include tooltip-info();
+      }
+      &:hover{
+        background: #AC0000;
+        color: white;
+        img {
+          filter: brightness(0) invert(1);
+        }
+        .tooltip-info {
+          visibility:visible;
+          opacity:1;
+        }
+      }
+    }
+  }
+
+  .my-land-list-grip-container {  
+    overflow-x: hidden;
+    font-size: 11px;
+    line-height: 18px;
+    letter-spacing: -0.3px;
+    @include custom-scrollbar();
+
+    .lds-ellipsis {
+      height: 7px;
+      margin: 0px 0px 0px 39px;
+    }
+    .lds-ellipsis div {
+      top: 0px;
+      background:  #AC0000;
+    }
+
+    .empty-replace {
+      width: 17px;
+      height: 17px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+    
+    .error-alert {
+      font-size: 10px;
+      color: red;
+      margin: 4px 0px 4px 0px;
+      text-align: center;
+      word-wrap: break-word;
+    }
+
+    .rename-btn {
+      background: url(/images/bloodland-ui/edit-pen.svg) no-repeat center center;
+      background-size: 75%;
+      width: 17px;
+      height: 17px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+    .confirm-btn {
+      background: url(/images/bloodland-ui/rename-confirm.png) no-repeat center center;
+      background-size: 90%;
+      width: 17px;
+      height: 17px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+    .cancel-btn {    
+      background: url(/images/bloodland-ui/rename-cancel-btn.png) no-repeat center center;
+      background-size: 90%;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+    input{
+      border: #666666 1px solid;
+      border-radius: 3px;
+      height: 16px;
+      font-size: 11px;
+    }
+
+    .folder-list{
+      margin-top: 4px;
+      .hovered{
+        background: rgb(255, 220, 144);
+      }
+      .folder{
+        display: flex;
+        padding: 3px;
+        cursor: pointer;
+
+        .check-box{
+          opacity:0.3;
+          &.folder-opened{
+            opacity:1;
+          }
+        }
+        svg.folder-open{
+          margin-right: 5px;
+          color: #AC0000;
+        }
+        svg.folder-close{
+          margin: 1px 7px 1px 0px;
+          color: #AC0000;
+        }
+        .name{
+          width: 159px;
+          height: 17px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        &:hover{
+          background: #AC0000;
+          color: white;
+          svg{
+            color: white;
+          }
+        }
+        &.edit{
+          input{
+            width: 149px;
+          }
+          svg{
+            color: #AC0000;
+          }
+          &:hover{
+            background: white;
+            color: #6c6d6d;
+            svg{
+              color: #AC0000;
+            }
+          }
+        }
+      }
+    }
+    .land-list{
+      .land{
+        display: flex;
+        padding: 3px 0px 2px 20px;
+        cursor: pointer;
+        .name{
+          width: 147px;
+          height: 17px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          
+          &.highlight-land {
+            color: $font-color-5;
+          }
+
+          &.hide-on-dragging{
+            opacity:0;
+          }
+        }
+        
+        &:hover{
+          background: #AC0000;
+          color: white !important;
+        }
+
+        &.edit{
+          input{
+            width: 155px;
+          }
+          &:hover{
+            background: white;
+            color: #6c6d6d;
+          }
+        }
+      }
+    }
+  }
+
+  .action-group{
+    position: relative !important;
+  }
+  
+}

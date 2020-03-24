@@ -1,0 +1,132 @@
+.friend-ui-screen{
+  padding: 15px 0px 15px 0px;
+  position: relative;
+  height: 629px;
+  overflow-x: hidden;
+  @include custom-scrollbar();
+}
+
+.friend-warning-screen {
+  height: 589px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #383838;
+  font-size: 25px;
+  text-align: center;
+  opacity: 0.7;
+  .screen-loading{
+    height: 68px;
+    background: #ffffff;
+    z-index: 1000;
+  }
+}
+
+.friend-list {
+  padding: 0px;
+
+  li {
+    margin: 0px;
+    padding: 6px 10px 7px 10px;
+    text-align: left;
+    list-style: none;
+    word-break: break-all;
+    display: flex;
+    cursor: pointer;
+    //noctice
+    .notice-item-title {
+      width: 162px;
+      margin-right: 5px;
+    }
+
+    .notice-item-time {
+      width: 55px;
+    }
+
+    //mail-list
+    .mail-item-checkbox {
+      @include check-box();
+    }
+
+    .mail-item {
+      cursor: pointer;
+      display: flex;
+      font-size: 11px;
+    }
+
+    .mail-item-status-unread {
+      width: 21px;
+      height: 20px;
+      margin-top: -4px;
+      margin-right: 5px;
+      background: url('/images/bloodland-ui/mail-read-icon.png') bottom no-repeat;
+
+      &.read {
+        background: url('/images/bloodland-ui/mail-unread-icon.png') bottom no-repeat;
+      }
+    }
+
+    .mail-item-user {
+      width: 172px;
+      margin-right: 13px;
+      height: 17px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &.mail-item-check-all {
+      cursor: initial;
+      border-bottom: $border2;
+
+      .mail-item-title {
+        cursor: pointer;
+        line-height: 15px;
+
+        &:hover {
+          color: $font-color-1
+        }
+      }
+
+      &:hover {
+        background: none;
+        color: $font-color;
+
+        .mail-item-checkbox {
+          filter: none;
+        }
+      }
+
+      .delete-button {
+        background: url('/images/game-ui/sm-recycle.svg') no-repeat;
+        margin: 0px;
+        padding: 0px;
+        border: none;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+        margin-left: auto;
+        background-size: contain;
+      }
+
+      .block-button {
+        background: url('/images/bloodland-ui/btn-blockfriend.png') no-repeat;
+        margin: 0px;
+        padding: 0px;
+        border: none;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        margin-left: auto;
+        background-size: contain;
+      }
+    }
+
+    &:hover {
+      background: $background-color-1;
+      color: $font-color-2;
+    }
+  }
+}
+
+

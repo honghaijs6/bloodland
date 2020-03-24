@@ -1,0 +1,145 @@
+
+.modal {
+  .modal-dialog {
+    &.custom-modal {
+      &.modal--bitamin-history {
+        @include set-modal-size(350px, 487px);
+
+        .custom-modal-body {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+.bitamin-history-body {
+  height: 351px;
+  .bitamin-history-list {
+    height: 22rem;
+    /* margin-bottom: 6px; */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar-thumb { background: $background-color-1 ; }
+    &::-webkit-scrollbar { width: 5px!important; background: #FFFFFF; }
+    //border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+    .history-item-wrapper{
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: center;
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      .number-col {
+        border-bottom: 1px $background-color-1 solid;
+        font-size: 12px;
+        width: 2rem;
+        height: 2rem;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: $background-color-1;
+      }
+      .date-col {
+        border-bottom: 1px $background-color-1 solid;
+        font-size: 12px;
+        width: 4rem;
+        height: 2rem;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+      .time-col {
+        border-bottom: 1px $background-color-1 solid;
+        font-size: 12px;
+        width: 3rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+      .cate-detail-col {
+        border-bottom: 1px $background-color-1 solid;
+        font-size: 12px;
+        width: 6rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .amount-col {
+        border-bottom: 1px $background-color-1 solid;
+        font-size: 12px;
+        width: 5rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        img{
+          height: 20px;
+          padding: 0px;
+          margin: 0px 0px 0px 5px;
+          width: 17px;
+        }
+      }
+    }
+  }
+}
+
+.bitamin-history-tabs {
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  border-bottom: #AC0000 1.5px solid;
+
+  .tabs-wrapper {
+    width: 21rem;
+    display: flex;
+
+    .tab-item {
+      width: 7rem;
+      height: 1.9rem;
+      align-self: flex-end;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+
+      &:hover {
+        color: #AC0000;
+      }
+
+      &.active {
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        background: #AC0000;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+
+
+.bitamin-history-no-records {
+  height: 367px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #383838;
+  font-size: 25px;
+  text-align: center;
+  opacity: 0.7;
+
+  .warning {
+    text-align: center;
+    margin: 0;
+  }
+
+}

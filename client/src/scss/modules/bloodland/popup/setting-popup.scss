@@ -1,0 +1,118 @@
+
+.modal{
+  .modal-dialog{
+    &.custom-modal {
+      &.modal--setting {
+        @include set-modal-size(250px, 525px);
+
+        .custom-modal-body {
+          text-align: center;
+          padding-top: 20px;
+          height: 100%;
+          img {
+            width: 50px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.text-selected,.text-total,.text-highlight{
+  color:#AC0000;
+}
+
+.setting-select{
+  color: white;
+  float: right;
+  position: absolute;
+  right: 14px;
+  .setting-selected{
+    background: #AC0000;
+    width: 128px;
+    border-radius: 3px;
+    cursor: pointer;
+    &:hover{
+      background: rgb(110, 15, 15);
+    }
+  }
+  .setting-select-dropdown{
+    margin-top: 1px;
+    border: solid 1px rgb(153, 21, 21);
+    border-bottom: none;
+    background: #AC0000;
+    border-radius: 3px;
+    &.hide{
+      display: none;
+    }
+    .setting-select-item{
+      border-bottom: solid 1px rgb(153, 21, 21);
+      cursor: pointer;
+      &:hover{
+        background: rgb(110, 15, 15);
+      }
+    }
+  }
+}
+
+
+.setting {
+  .setting-row {
+    display: flex;
+    width: 100%;
+
+    &.margin-top-20 {
+      margin-top: 20px
+    }
+  }
+
+  .switch-control {
+    width: 43px;
+    height: 17px;
+    position: relative;
+    background: $background-color-1;
+    margin-left: auto;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 1s;
+    color: $font-color-2;
+
+    .switch-content-on {
+      position: absolute;
+      left: 4px;
+    }
+
+    .switch-content-off {
+      position: absolute;
+      right: 3px;
+    }
+
+    .switch-btn {
+      position: absolute;
+      width: 22px !important;
+      height: 23px;
+      bottom: -3px;
+      left: -7px;
+      transition: $trasition_hover_time;
+      transform: translateX(0px);
+
+      &.on {
+        transform: translateX(35px);
+      }
+    }
+  }
+
+  .rc-slider {
+    .rc-slider-rail {
+      background-color: $background-color-11;
+    }
+
+    .rc-slider-track {
+      background-color: $background-color-1;
+    }
+
+    .rc-slider-handle {
+      border: solid 2px $background-color-1;
+    }
+  }
+}

@@ -1,0 +1,138 @@
+.modal{
+  .modal-dialog{
+    &.custom-modal {
+      &.modal--land-sell {
+        @include set-modal-size(580px, auto);
+        .custom-modal-body {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+   
+.sell-land-container{
+  $land_col_width : 234px;
+  $blood_col_width : auto;
+  $body_height : 356px;
+  color: rgb(108, 109, 109);
+  
+  input {
+    border: none;
+    background: #efeded;
+    border-radius: 5px;
+    padding: 1px;
+    text-align: right;
+    width: 8rem;
+    margin-left: 10px;
+  }
+
+  .header-grid{
+    display: grid;
+    grid-template-columns: $land_col_width $blood_col_width;
+    width: 100%;
+    
+  
+    .land-col {
+      @include header-cell-properties(center,'break',(right,bottom));
+    }
+  
+    .blood-col {
+      @include header-cell-properties(center,'break',(bottom));
+    }
+    
+    .land-sub-col {
+      @include header-cell-properties(left,'break',(right,bottom));
+      span{
+        cursor: pointer;
+        &:hover{
+          color:#AC0000;
+        }
+      }
+    }
+
+    .blood-sub-col {
+      @include header-cell-properties(right,'break',(bottom));
+      input{
+        width: 6rem;
+      }
+    }
+  }
+  
+  .body-grid{
+    display: grid;
+    grid-template-columns: $land_col_width $blood_col_width;
+    grid-template-rows: 10px;
+    grid-auto-rows: 21px;
+    width: 100%;
+    
+    height: $body_height;
+    @include custom-scrollbar();
+    .item-row{
+      display: contents;
+      .land-col {
+        @include cell-properties(left,'hide',right);
+        span{
+          cursor: pointer;
+        }
+      }
+      .blood-col {
+        @include cell-properties(right,'hide');
+      }
+
+      &:hover{
+        .land-col,.blood-col {
+          background: #AC0000;
+          color:white;
+        }
+      }
+
+      &:nth-child(1) {
+        .land-col{
+          height: $body_height;
+        }
+        &:hover{
+          .land-col,.blood-col {
+            background: white;
+            color:#AC0000;
+          }
+        }
+      }
+    }
+  }
+  
+  .footer-grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns:  $land_col_width $blood_col_width;
+    grid-auto-rows: 40px;
+    
+    
+    .footer1-col {
+      @include cell-properties(center,'break',(right,top));
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .footer2-col {
+      @include cell-properties(center,'break',(top));
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      .value {
+        border: none;
+        background: #efeded;
+        border-radius: 3px;
+        padding: 1px 3px 0px 3px;
+        text-align: right;
+        width: 3rem;
+        font-size: 12px;
+        margin: 0px 5px 0px 5px;
+      }
+    }
+  }
+}

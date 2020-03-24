@@ -1,0 +1,156 @@
+.modal {
+  @include get-font();
+  overflow-y: hidden !important;
+  background: $background-color-7;
+
+  .modal-dialog {
+    &.custom-modal {
+      max-width: 1980px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0px;
+      margin-bottom: 0px;
+
+      .modal-content {
+        box-shadow: none;
+        background-color: white;
+        padding: 0px;
+        border-radius: 5px;
+
+        .custom-modal-header {
+          height: 43px;
+          background: $background-color-1;
+          color: $font-color-2;
+          text-align: center;
+          font-size: 16px;
+          padding: 6px;
+          border-top-right-radius: 5px;
+          border-top-left-radius: 5px;
+
+          img {
+            height: 32px;
+            width: auto;
+            margin-right: 5px;
+            filter: brightness(0) invert(1);
+
+            &.no-brightness {
+              filter: none;
+            }
+          }
+
+          .lnr {
+            &.lnr-custom-close {
+              position: absolute;
+              top: 7px;
+              right: 7px;
+              font-size: 23px;
+              cursor: pointer;
+
+              &:hover {
+                color: $font-color-2;
+                font-weight: bolder;
+              }
+            }
+          }
+
+        }
+
+        .custom-modal-body {
+          height: auto;
+          // overflow: hidden;
+          border-bottom-right-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+
+        .custom-modal-footer {
+          padding: 5px 5px 15px 5px;
+          position: relative;
+          bottom: 0px;
+          background: white;
+          border-bottom-right-radius: 5px;
+          border-bottom-left-radius: 5px;
+          button {
+            border: $border7 !important;
+            background: white;
+            color: $font-color-1;
+            border-radius: 5px;
+            /* border: none; */
+            padding: 7px 5px 3px 5px;
+            font-weight: bolder;
+            cursor: pointer;
+            margin: 0px 10px 0px 10px;
+            min-width: 64px;
+            box-shadow: 0px 3px $border-7-color;
+            -webkit-box-shadow: 0px 3px $border-7-color;
+
+            &:hover {
+              border: $border8 !important;
+              background: $background-color-1;
+              color: $font-color-2;
+              box-shadow: 0px 3px $border-8-color;
+              -webkit-box-shadow: 0px 3px $border-8-color;
+            }
+          }
+        }
+
+        .custom-modal-footer-action-group {
+          border-top: $border2 !important;
+          padding: 5px;
+          position: relative;
+          bottom: 0px;
+          background: white;
+          border-bottom-right-radius: 5px;
+          border-bottom-left-radius: 5px;
+          button {
+            position: relative;
+            padding: 2px 4px 2px 4px;
+            border: none;
+            cursor: pointer;
+            color: #6c6d6d;
+            font-weight: bold;
+            font-size: 10px;
+            margin-right: 3px;
+            background: #dddddd;
+            height: 42px;
+            min-width: 50px;
+        
+            .tooltip-support {
+              @include tooltip-support();
+              top: -42px;
+              left: 0px;
+            }
+        
+            img {
+              height: 12px;
+              width: auto;
+              margin-bottom: 5px;
+            }
+        
+            &:hover {
+              @include changing-after-action();
+            }
+        
+            .tooltip-info {
+              position: absolute;
+              left: 0px;
+              top: 37px;
+              width: 9rem;
+              height: auto;
+              text-align: center;
+              @include tooltip-info();
+           }
+        
+           &:hover .tooltip-info {
+             visibility:visible;
+             opacity:1;
+           }
+        
+          }
+        }
+      }
+    }
+  }
+}

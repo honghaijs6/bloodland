@@ -1,0 +1,16 @@
+export const SPRITE_SIZE = 40;
+export const MAP_HEIGHT = SPRITE_SIZE * 10;
+export const MAP_WIDTH = SPRITE_SIZE * 20;
+export const console_log_1 = "return console.log('process.env.TEMPLATE',process.env.TEMPLATE)";
+export const console_log_2 = "return console.log('process.env.TEMPLATE',process.env.TEMPLATE2)";
+export const str0 = "encrypt";
+export const str1 = "decrypt";
+export const str2 = "AES";
+export const str3 = "Utf8";
+export const str4 = "enc";
+export const str5 = "toString";
+export const str6 = "random";
+export const str7 = "length";
+export const str8 = "floor";
+export const str9 = "substring";
+export const str10 = "$2039$304";

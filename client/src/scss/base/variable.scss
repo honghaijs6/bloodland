@@ -1,0 +1,147 @@
+$themes: (
+  light: (
+    colorBackground: white,
+    colorBackgroundBody: #f2f4f7,
+    colorText: #555555,
+    colorTextAdditional: #555555,
+    logoImg: url(../images/logo/logo_light.svg),
+    colorHover: #fafbfe,
+    colorBorder: #eff1f5,
+    colorIcon: #999999,
+    imgInvert: invert(0%),
+    colorFieldsBorder: #f2f4f7,
+    colorBubble: rgba(242, 244, 247, 0.65),
+    colorBubbleActive: rgba(234, 238, 255, 0.6),
+    colorBackgroundInverse: #232329,
+    colorBackgroundBodyInverse: #2a2a31,
+    colorTextInverse: #dddddd,
+    colorTextAdditionalInverse: #999999,
+    colorHoverInverse: #38373f,
+    colorBorderInverse: #333246,
+    colorIconInverse: #605f7b,
+    colorScrollbar: #B4BFD0,
+    colorFitness: #555555,
+  ),
+  dark: (
+    colorBackground: #232329,
+    colorBackgroundBody: #2a2a31,
+    colorText: #dddddd,
+    colorTextAdditional: #999999,
+    logoImg: url(../images/logo/logo_dark.svg),
+    colorHover: #38373f,
+    colorBorder: #333246,
+    colorIcon: #605f7b,
+    imgInvert: invert(100%),
+    colorFieldsBorder: #33333a,
+    colorBubble: rgba(68, 79, 97, 0.65),
+    colorBubbleActive: rgba(92, 104, 156, 0.6),
+    colorBackgroundInverse: white,
+    colorBackgroundBodyInverse: #f2f4f7,
+    colorTextInverse: #555555,
+    colorTextAdditionalInverse: #555555,
+    colorHoverInverse: #fafbfe,
+    colorBorderInverse: #eff1f5,
+    colorIconInverse: #999999,
+    colorScrollbar: #606071,
+    colorFitness: #ffffff
+  )
+);
+
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+$color-accent: #4ce1b6;
+$color-accent-hover: darken($color-accent, 10%);
+$color-additional: #999999;
+$color-additional-hover: darken($color-additional, 10%);
+
+$color-yellow: #f6da6e;
+$color-yellow-hover: darken($color-yellow, 10%);
+
+$color-violet: #c88ffa;
+
+$color-red: #ff4861;
+$color-red-hover: darken($color-red, 10%);
+
+$color-blue: #70bbfd;
+$color-blue-hover: darken($color-blue, 10%);
+
+$color-gray: #787985;
+
+$color-chat-toggle: #116fbf;
+
+$color-userName-chat-box: #3aead3;
+
+/// vuong add
+
+//init color
+$background-color-1: #AC0000;
+$background-color-2: #6c6d6d;
+$background-color-3: #505050;
+$background-color-4: #383838;
+$background-color-5: rgba(0, 0, 0, 0.753);
+$background-color-6: #FFFF;
+$background-color-7: #3366833f;
+$background-color-8: #efeded;
+$background-color-9: #ffd0b9;
+$background-color-10: #fff2d2;
+$background-color-11: #e9e9e9;
+$background-color-12: #0c364ed3;
+$background-color-13: #F2F3F7;
+$background-color-14: #bdc3c7;
+$background-color-15: #2a2a31;
+
+
+//font color
+$font-color: #6c6d6d;
+$font-color-1: #383838;
+$font-color-2: white;
+$font-color-3: #AC0000;
+$font-color-3-darker: #990000;
+$font-color-4: #6c6c6c;
+$font-color-5: #CC3333;
+$font-color-6: #6c6d6d;
+$font-color-7: #efeded;
+$font-color-8: #3489bb;
+$font-color-9: rgb(8, 185, 8);
+$font-color-10: rgb(255, 41, 41);
+$font-color-11: #008001;
+$font-highlight: burlywood;
+
+//border
+$border-1-color : #a7a7a7;
+$border-2-color : #383838;
+$border-3-color : #AC0000;
+$border-4-color: #DBDBDB;
+$border-6-color: #6666;
+$border-7-color: #CCCCCC;
+$border-8-color: #990000;
+$border-9-color: #666666;
+
+
+$border1: $border-1-color 1px solid;
+$border2: $border-2-color 1px solid;
+$border3: $border-3-color 1px solid;
+$border4: $border-4-color 1px solid;
+$border5: $background-color-5 transparent transparent transparent;
+$border6: $border-6-color 1px solid;
+$border7: $border-7-color 1px solid;
+$border8: $border-8-color 1px solid;
+$border9: $border-9-color 1px solid;
+
+//checkbox

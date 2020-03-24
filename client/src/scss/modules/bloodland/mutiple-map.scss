@@ -1,0 +1,50 @@
+.left-bottom-m {
+    top: 10px;
+    /*left: 10px;*/
+    height: 18rem;
+    width: 18rem;
+}
+.left-bottom-m-toggle {
+    top: 10px;
+}
+.wrap-m {
+    position: absolute;
+    background: none;
+
+}
+
+.map-container{
+    width: 100%;
+    overflow: hidden;
+}
+
+.mainMap {
+	position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.dnd-google-map {
+    width: 100%;
+    height: 100%;
+}
+
+a[href^="http://maps.google.com/maps"],
+a[href^="https://maps.google.com/maps"],
+a[href^="https://www.google.com/maps"] {
+    display: none !important;
+}
+
+// .gm-bundled-control .gmnoprint {
+//     display: block;
+// }
+.gmnoprint {
+    &:nth-child(5) {
+        display: none;
+    }
+}
+
+.gm-style-cc {
+    display: none;
+}

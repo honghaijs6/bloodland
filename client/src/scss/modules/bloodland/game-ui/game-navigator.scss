@@ -1,0 +1,736 @@
+.game-ui {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  font-family: 'GodoB';
+  color: $font-color;
+  display: flex;
+  height: 817px;
+  width: 71px;
+
+
+  .game-navigator {
+    position: relative;
+    height: 100%;
+    min-height: 570px;
+    width: 70px;
+    background: white;
+    z-index: 99;
+    border-left: $border1;
+    // -webkit-box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.75);
+    // -moz-box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.4);
+
+    .logo-game {
+      padding: 10px;
+      border-top: $border1;
+
+      img {
+        width: 46px;
+      }
+
+      &:hover {
+        background: $background-color-1;
+        color: $font-color-2;
+
+      }
+    }
+
+    @keyframes beforePulse {
+      from {
+        width: 7px;
+        height: 7px;
+      }
+      25% {
+        width: 13px;
+        height: 13px;
+      }
+      to {
+        width: 7px;
+        height: 7px;
+      }
+    }
+
+    ul.game-tabs {
+      border-top: $border1;
+      padding: 23px 0px 0px 0px;
+      margin: 0px;
+      height: 300px;
+
+      li {
+        width: 70px;
+        margin: 0px;
+        padding: $li-padding;
+        list-style: none;
+        cursor: pointer;
+        text-align: center;
+        transition: $trasition_hover_time;
+        position: relative;
+
+        .lds-ellipsis{
+          &.img-loading{
+            div{
+              background: rgba(160, 160, 160, 0.534);
+            }
+          }
+          
+        }
+
+        img {
+          width: 23px;
+          height: 23px;
+        }
+
+        .has-new{
+          color: yellow;
+          font-family: monospace;
+          font-weight: normal;
+          position: absolute;
+          font-size: 11px;
+          top: 2px;
+          right: 7px;
+          text-shadow: 1px 1px 2px #AC0000, 1px -1px 2px #AC0000, -1px 1px 2px #AC0000, -1px -1px 2px #AC0000;
+        }
+        
+        .alert-badge-number{
+          color: white;
+          background: $background-color-1;
+          border-radius:10px;
+          font-size: 8px; 
+          position: absolute;
+          top: 9px;
+          right: 20px;
+          padding: 2px 4px 2px 4px;
+        }
+
+        .alert-badge {
+          position: absolute;
+          top: 9px;
+          right: 20px;
+          &:before {
+            background-color: rgba(224, 83, 111, 0.2);
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: beforePulse 1.5s infinite;
+          }
+      
+          &:after {
+            height: 7px;
+            width: 7px;
+            background-color: #e0536f;
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        .tooltip-info {
+          position: absolute;
+          right: 6px;
+          top: 6px;
+          width: 9rem;
+          height: auto;
+          text-align: center;
+          @include tooltip-info();
+       }
+       &:hover .tooltip-info {
+         visibility:visible;
+         opacity:1;
+       }
+
+
+        &.game-mode {
+          @mixin filter-gamemode {
+            img {
+              filter: brightness(0) invert(0.5);
+            }
+            //background: #b2b2b2;
+            //color: $font-color;
+          }
+          @include filter-gamemode();
+
+          &:hover {
+            @include filter-gamemode();
+            background: $background-color-6;
+            color: $font-color-4;
+          }
+        }
+
+        &.active {
+          @include changing-after-action();
+          .alert-badge {
+            &:before {
+              background-color: rgb(230, 230, 230);
+            }
+        
+            &:after {
+              background-color: #e0536f;
+            }
+          }
+        }
+
+        &:hover {
+          @include changing-after-action();
+          .alert-badge {
+            &:before {
+              background-color: rgb(230, 230, 230);
+            }
+        
+            &:after {
+              background-color: #e0536f;
+            }
+          }
+        }
+      }
+    }
+
+    ul.game-tabs2 {
+      padding: 0px;
+      margin: 0px;
+      position: absolute;
+      bottom: 0px;
+      text-align: center;
+
+      z-index: 99;
+      border-bottom: $border1;
+
+      li {
+        width: 70px;
+        margin: 23px 0px 23px 0px;
+        padding: $li-padding;
+        cursor: pointer;
+        list-style: none;
+        transition: $trasition_hover_time;
+        position: relative;
+        
+        .lds-ellipsis{
+          &.img-loading{
+            div{
+              background: rgba(160, 160, 160, 0.534);
+            }
+          }
+          
+        }
+
+        img {
+          width: 23px;
+          height: 23px;
+        }
+
+        &:hover {
+          @include changing-after-action();
+        }
+
+        .tooltip-info {
+          position: absolute;
+          right: 6px;
+          top: 6px;
+          width: 9rem;
+          height: auto;
+          text-align: center;
+          @include tooltip-info();
+       }
+       &:hover .tooltip-info {
+         visibility:visible;
+         opacity:1;
+       }
+
+      }
+    }
+  }
+
+  &.game-ui--show-content {
+    width: auto;
+  }
+
+  .game-tab-content {
+    position: relative;
+    height: 100%;
+    min-height: 570px;
+    width: 235px;
+    background: white;
+    border: $border1;
+    border-right: none;
+    padding: 80px 0px 66px 0px;
+    z-index: 98;
+    transition: transform 0.1s;
+    -webkit-box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.75);
+
+    &.game-tab-content--hidden {
+      -ms-transform: translate(310px, 0px); /* IE 9 */
+      -webkit-transform: translate(310px, 0px); /* Safari */
+      transform: translate(310px, 0px);
+    }
+
+    ul.function-menu {
+      padding: 0px;
+      margin: 0px;
+
+      li {
+        width: 100%;
+        padding: $li-padding;
+        margin: 1px 0px 1px 0px;
+        cursor: pointer;
+        list-style: none;
+        text-align: center;
+        position: relative;
+        transition: $trasition_hover_time;
+        .has-new{
+          color: yellow;
+          font-family: monospace;
+          font-weight: normal;
+          position: absolute;
+          font-size: 11px;
+          top: 7px;
+          right: 82px;
+          text-shadow: 1px 1px 2px #AC0000, 1px -1px 2px #AC0000, -1px 1px 2px #AC0000, -1px -1px 2px #AC0000;
+        }
+        .lds-ellipsis{
+          &.img-loading{
+            div{
+              background: rgba(160, 160, 160, 0.534);
+            }
+          }
+          
+        }
+
+        img {
+          width: auto;
+          height: 30px;
+          margin-bottom: 5px;
+        }
+        
+        .alert-badge {
+          position: absolute;
+          top: 9px;
+          right: 94px;
+          &:before {
+            background-color: rgba(224, 83, 111, 0.2);
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: beforePulse 1.5s infinite;
+          }
+      
+          &:after {
+            height: 7px;
+            width: 7px;
+            background-color: #e0536f;
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        &.active {
+          @include changing-after-action();
+          .alert-badge {
+            &:before {
+              background-color: rgb(230, 230, 230);
+            }
+        
+            &:after {
+              background-color: #e0536f;
+            }
+          }
+        }
+
+        &:hover {
+          @include changing-after-action();
+          .alert-badge {
+            &:before {
+              background-color: rgb(230, 230, 230);
+            }
+        
+            &:after {
+              background-color: #e0536f;
+            }
+          }
+        }
+
+        &.hover-no-change-img {
+          &:hover {
+            background: $background-color-1;
+            color: $font-color-2;
+
+            img {
+              filter: none;
+            }
+          }
+        }
+
+        &.no-bg-hover {
+          cursor: pointer;
+
+          .avatar-icon-container {
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .social-icon {
+              margin-top: 15px;
+              margin-left: -14px;
+
+              img {
+                margin-left: 2px;
+                width: 14px;
+                height: 14px;
+              }
+            }
+          }
+
+          &:hover {
+            background: $background-color-6;
+            color: $font-color-1;
+
+            img {
+              filter: none;
+            }
+          }
+        }
+
+        &.no-hover {
+          //cursor: unset;
+          &:hover {
+            background: $background-color-6;
+            color: $font-color;
+
+            img {
+              filter: none;
+            }
+          }
+        }
+
+        .expand-icon {
+          position: absolute;
+          top: 45%;
+          left: 10px;
+          background: url('/images/bloodland-ui/expand-nav-item.png');
+          width: 15px;
+          height: 8px;
+        }
+
+        .tooltip-info {
+          position: absolute;
+          right: 123px;
+          top: -9px;
+          width: 14.4rem;
+          height: auto;
+          text-align: left;
+          @include tooltip-info();
+       }
+       &:hover .tooltip-info {
+         visibility:visible;
+         opacity:1;
+       }
+      }
+
+      .add-friend-dropdown {
+        input {
+          border-radius: 3px;
+        }
+
+        .search-friend-btn {
+          border: #CCCCCC 1px solid !important;
+          background: #fff;
+          box-shadow: 0px 2.5px #CCCCCC;
+          -webkit-box-shadow: 0px 2.5px #CCCCCC;
+          border-radius: 3px;
+          padding: 4px 4px 1px 4px;
+          font-size: 12px;
+          color: #6c6d6d;
+
+          &:hover {
+            background: $background-color-1;
+            box-shadow: 0px 2.5px $font-color-3-darker;
+            -webkit-box-shadow: 0px 2.5px $font-color-3-darker;
+            border: $font-color-3-darker 1px solid !important;
+            color: $font-color-2;
+          }
+        }
+
+        .exist-friend {
+          .friend-item {
+            margin-top: 4px;
+            padding: 0px 13px 0px 13px;
+            line-height: 23px;
+            width: 228px;
+            height: 30px;
+
+            .friend-name {
+              text-align: center;
+              width: 174px;
+              float: left;
+              font-size: 11px;
+              line-height: 23px;
+              color: $background-color-1;
+            }
+
+            .friend-alert {
+              text-align: center;
+              width: 174px;
+              float: left;
+              font-size: 11px;
+              color: $background-color-1;
+              line-height: 12px;
+            }
+
+            .add-friend-btn {
+              float: right;
+
+              img {
+                width: auto;
+                height: 23px;
+              }
+            }
+          }
+        }
+      }
+
+      li.menu-level-2 {
+
+        text-align: left;
+        padding: 11px 0px 9px 54px;
+
+        &.info {
+          padding: 11px 0px 9px 0px;
+        }
+
+
+        // margin: 0px 0px 0px 0px;
+        transition: $trasition_hover_time;
+
+        img {
+          width: auto;
+          height: 19px;
+          margin-bottom: 0px;
+        }
+
+        .alert-badge {
+          position: absolute;
+          top: 9px;
+          left: 37px;
+          &:before {
+            background-color: rgba(224, 83, 111, 0.2);
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: beforePulse 1.5s infinite;
+          }
+      
+          &:after {
+            height: 7px;
+            width: 7px;
+            background-color: #e0536f;
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        &.clear-hover {
+          &:hover {
+            background: none;
+            color: unset;
+
+            .hide-icon {
+              filter: brightness(0) invert(1);
+            }
+          }
+        }
+
+        &.scrollable {
+          @include custom-scrollbar();
+        }
+
+        .lv2-action-group {
+          padding: 8px 8px 8px 8px;
+          border-top: $border2;
+          width: 100%;
+          @include action-group-button();
+        }
+
+        &:hover {
+          background: $background-color-1;
+          color: $font-color-2;
+          .alert-badge {
+            &:before {
+              background-color: rgb(230, 230, 230);
+            }
+        
+            &:after {
+              background-color: #e0536f;
+            }
+          }
+
+          .hide-icon {
+            filter: brightness(0) invert(1);
+          }
+        }
+
+      }
+
+      li.break-line {
+        margin-top: -7px;
+        border-bottom: $border6;
+
+        &:hover {
+          background: none;
+          color: unset;
+
+          .hide-icon {
+            filter: brightness(0) invert(1);
+          }
+        }
+      }
+    }
+
+    .hide-panel {
+      background: white;
+      position: absolute;
+      top: 85px;
+      left: -21px;
+      width: 20px;
+      height: 154px;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      border: $border1;
+      border-right: none;
+      cursor: pointer;
+      transition: $trasition_hover_time;
+      -webkit-box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.75);
+
+      .hide-icon {
+        width: 20px;
+        height: 154px;
+        background: url('/images/bloodland-ui/hide-panel-ico.png') center no-repeat;
+
+      }
+
+      &:hover {
+        background: $background-color-1;
+        color: $font-color-2;
+
+        .hide-icon {
+          filter: brightness(0) invert(1);
+        }
+      }
+
+    }
+
+    .screen-title {
+      width: 100%;
+      height: 57px;
+      padding: $li-padding;
+      margin: 0px 0px 0px 0px;
+      background: $background-color-1;
+      color: $font-color-2;
+      text-align: center;
+
+      img {
+        width: auto;
+        height: 29px;
+        filter: brightness(0) invert(1);
+      }
+
+      &.clear-top-empty {
+        margin: -58px 0px 0px 0px;
+      }
+    }
+
+    @mixin no-padding() {
+      &.no-padding {
+        padding: 0px;
+      }
+    }
+    @mixin no-padding-bottom() {
+      &.no-padding-bottom {
+        padding-bottom: 0px;
+      }
+    }
+
+    ///////////////////////////////////////////////////////// content-3 /////////////////////////////////////////////////////////
+    $padding-size: 5px;
+    $sub-content-3-height: 40px + $padding-size*2;
+
+    .my-land-counter {
+      padding: $padding-size 0px $padding-size 0px;
+      text-align: center;
+    }
+
+    .sub-screen-content-3 {
+      height: $sub-content-3-height;
+      border-bottom: $border2;
+    }
+
+    .screen-content-3 {
+      padding: 15px 0px 15px 0px;
+      @include height-screen-content($sub-content-3-height + $offset-height);
+      @include custom-scrollbar();
+      @include no-padding();
+      @include no-padding-bottom();
+      overflow-x: hidden;
+    }
+
+    ///////////////////////////////////////////////////////// content-4 /////////////////////////////////////////////////////////
+    $sub-content-4-height: 20px + $padding-size*2;
+
+    .header-tb {
+      padding: $padding-size 0px $padding-size 0px;
+      display: flex;
+      text-align: center;
+    }
+
+    .sub-screen-content-4 {
+      height: $sub-content-4-height;
+      border-bottom: $border2;
+    }
+
+    .screen-content-4 {
+      padding: 8px 0px 8px 0px;
+      @include height-screen-content($sub-content-4-height + $sub-content-3-height +  $offset-height);
+      @include custom-scrollbar();
+      @include no-padding();
+      @include no-padding-bottom();
+    }
+
+    ///////////////////////////////////////////////////////// content-4 /////////////////////////////////////////////////////////
+    .action-group {
+      position: absolute;
+      bottom: 0;
+      padding: 3px 2px 2px 2px;
+      border-top: #a7a7a7 1px solid;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 58px auto auto auto;
+      grid-auto-rows: 39px;
+      @include action-group-button();
+    }
+
+  }
+}

@@ -1,0 +1,683 @@
+$fadingTime : 3s;
+
+@font-face {
+  font-family: digital-7;
+  src: url("/fonts/digital-7.ttf");
+}
+.modal-border{
+  box-shadow: 0 20px 20px rgba(43, 188, 255, 0.4);
+  -moz-box-shadow: 0 20px 20px rgba(43, 188, 255, 0.4);
+  -webkit-box-shadow: 0 20px 20px rgba(43, 188, 255, 0.4);
+  border-radius: 50px;
+  overflow: hidden;
+}
+.rps-intro{
+  .rps-intro-content{
+    position:absolute;
+    bottom: 100px;
+    width: 1024px;
+    text-align: center;
+    height: 100px;
+    h1{
+      font-size: 72px;
+      font-weight: bold;
+    }
+  }
+}
+
+.rps-game{
+  width:1024px;
+  height:768px;
+  background:url("/images/gamerps/rps-game-bg.png");
+  padding:50px 0px 0px 0px;
+  
+  animation: fadein $fadingTime;
+  -moz-animation: fadein $fadingTime; /* Firefox */
+  -webkit-animation: fadein $fadingTime; /* Safari and Chrome */
+  -o-animation: fadein $fadingTime;
+
+  .rps-game-content{
+    width:950px;
+    padding-left: 100px;
+    padding-top: 30px;
+    margin-top: -50px;
+    height:680px;
+    z-index: 1;
+  }
+  
+  .cloud, .cloud_2, .cloud_3, .cloud_4{
+    animation: move 6s ease infinite;
+    border-radius: 50%;
+    position: absolute;
+    top: 34%; left: 50%;
+    margin-top: -30px;
+    margin-left: -30px;
+    background: #fff;
+    height: 60px; width: 60px;
+    z-index: 999;
+    box-shadow:
+      #fff 65px -15px 0 -5px, 
+      #fff 25px -25px, 
+      #fff 30px 10px, 
+      #fff 60px 15px 0 -10px, 
+      #fff 85px 5px 0 -5px;
+  }
+
+  .cloud_2{
+    top: 27%; left: 29%;
+    animation-duration: 8s;
+  }
+
+  .cloud_3{
+    top: 55%; left: 29%;
+    animation-duration: 8s;
+    height: 50px; width: 50px;
+  }
+  
+  .cloud_4{
+    top: 60%; left: 29%;
+    animation-duration: 8s;
+    height: 50px; width: 50px;
+  }
+}
+
+.rpg-ending{
+  width:1024px;
+  height:768px;
+  background:url("/images/gamerps/thankgiving-bg.jpg");
+  padding:30px;
+
+  animation: fadein $fadingTime;
+  -moz-animation: fadein $fadingTime; /* Firefox */
+  -webkit-animation: fadein $fadingTime; /* Safari and Chrome */
+  -o-animation: fadein $fadingTime;
+
+  .rpg-ending-content{
+    width:600px;
+    height:300px;
+    position:relative;
+    left: 250px;
+    top:320px;
+  }
+}
+
+
+.rpg-success-info{
+  width:1024px;
+  height:768px;
+  background:url("/images/gamerps/success-bg.png");
+  padding:30px;
+  
+  animation: fadein $fadingTime;
+  -moz-animation: fadein $fadingTime; /* Firefox */
+  -webkit-animation: fadein $fadingTime; /* Safari and Chrome */
+  -o-animation: fadein $fadingTime;
+
+}
+
+.rpg-result-info{
+  width:1024px;
+  height:768px;
+  background:url("/images/gamerps/rps-game-bg.png") center ;
+  padding:30px;
+  background-size: cover;
+   
+  animation: fadein $fadingTime;
+  -moz-animation: fadein $fadingTime; /* Firefox */
+  -webkit-animation: fadein $fadingTime; /* Safari and Chrome */
+  -o-animation: fadein $fadingTime;
+
+  .rps-result-info-title{
+    background: url("/images/gamerps/result-title-bg.png") no-repeat;
+    width: 231px;
+    height: 100px;
+    color: #005780;
+    font-size: 50px;
+    text-align: left;
+    padding: 10px 0px 0px 60px;
+    position: absolute;
+  }
+  .rpg-result-info-content{
+    width: 100%;
+    height: 550px;
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+      &::-webkit-scrollbar{
+        width: 5px;
+
+      }
+      &::-webkit-scrollbar-thumb{
+        background: #156b94;
+        transition: all 0.5s linear;
+      }
+      &:hover {
+        &::-webkit-scrollbar-thumb{
+          background: white;
+          transition: all 0.5s linear;
+        }
+      }
+
+    .vertical-join{
+      width: 490px;
+      height: 100px;
+      margin: -85px 0px -10px 0px;
+      border-right:#05c400 5px solid;
+    }
+    .vertical-join-showround{
+      width: 490px;
+      padding-top: 20px;
+      margin: -60px 0px 0px 0px;
+      border-right:#05c400 5px solid;
+      vertical-align: bottom;
+      text-align: right;
+      &.is-winner{
+        padding-top: 50px;
+        //border-right:yellow 5px solid;
+      }
+      &.yellow{
+        border-right:yellow 5px solid;
+      }
+      button{
+        margin-right: -28px;
+        padding: 1px 3px 6px 3px;
+        line-height: 8px;
+        &.yellow{
+          background: yellow;
+        }
+      }
+    }
+    
+    .rps-winner{
+      width: 100px;
+      height: 119px;
+      text-align: center;
+      position: relative;
+      left: 436px;
+      .winner{
+        width: 60px;
+        height: 60px;
+        background: yellow;
+        
+        border:#05c400 4px solid;
+        border-radius: 40px;
+        cursor: pointer;
+      }
+      .winner-name{
+        width: auto;
+        text-align: center;
+        font-family: 'digital-7';
+        background: yellow;
+        border:#05c400 5px solid;
+        padding: 2px;
+        border-radius: 30px;
+        margin-top:4px;
+        cursor: pointer;
+      }
+    }
+    .rps-round{
+      width: 100%;
+      display: flex;
+      .player{
+        .player-display{
+          display: flex;
+          
+          .cloud-group{
+            width: 97px;
+            cursor: pointer;
+            .cloud-char{
+                width: 97px;
+                line-height: 66px;
+                background: url("/images/gamerps/result-cloud-bg.png") center no-repeat;
+                vertical-align: middle;
+                text-align: center;
+                height: 66px;
+                z-index: 9;
+                .char{
+                  width: 45px;
+                  height: 45px;
+                  position: relative;
+                  top: -5px;
+                  left: 10px;
+                }
+                .selectedRps{
+                  width: 25px;
+                  height: 25px;
+                  position: relative;
+                  top: 10px;
+                  left: -10px;
+                }
+              }
+          }
+          .rps-detail{
+            width: 220px;
+            .selectedRps{
+              width: 25px;
+              height: 26px;
+              margin: 5px;
+              float: left;
+              div{
+                color: #fff;
+                font-size: 7px;
+                font-weight: bolder;
+                position: relative;
+                top: -28px;
+                left: 14px;
+                background: #FF616B;
+                width: 10px;
+                height: 10px;
+                border-radius: 20px;
+                padding: 0px 0px 0px 2px;
+                text-align: center;
+              }
+              &.left{
+                float: right
+              }
+
+            }
+          }
+        }
+        .player-info{
+          width: 150px;
+          margin-top: -15px;
+          font-weight: bolder;
+          color:rgb(0, 87, 128);
+          margin-bottom: 10px;
+          border:white solid 3px;
+          border-top: none;
+          padding: 0px 6px 0px 6px;
+          padding-top: 10px;
+          &.left{
+            float:right;
+            text-align: right;
+            margin-right: 50px;
+            border-left: none;
+          }
+          &.right{
+            margin-left: 50px;
+            border-right: none;
+          }
+        }
+      }
+      .display-result{
+        width: 350px;
+        height: 66px;
+        padding-top: 3px;
+        display: flex;
+        align-content: center;
+        vertical-align: middle;
+        
+        .winner-result{
+          width: 55px;
+          height: 55px;
+          background: #05c400;
+          border-radius: 28px;
+          text-align: center;
+          padding-top: 10px;
+          font-family: 'digital-7';
+          border: #05c400 solid 3px;
+          span{
+            font-size: 20px;
+            color: white;
+          }
+        }
+        .line-join{
+          width: 140px;
+          height: 35px;
+          margin:2px;
+          border-bottom: white dotted 10px;
+        }
+        .winner-line-join{
+          width: 140px;
+          height: 35px;
+          margin:2px;
+          border-bottom: #05c400 dotted 10px;
+          text-align: center;
+          
+          font-family:'digital-7';
+          font-size: 16px;
+          color: #05c400;
+          letter-spacing: 2px;
+          
+        }
+      }
+    }
+    
+  
+  }
+}
+
+@keyframes move{
+  50% { transform: translateY(-15px); }
+}
+
+$bottomOffset:10px;
+.rps-item{
+  float: left;
+  width:217px;
+  height:200px + $bottomOffset;
+  background:url("/images/gamerps/cloud.png") no-repeat;
+  margin-top: - $bottomOffset;
+
+  &:nth-child(odd) {
+    background-position: bottom !important;
+    padding-top: 55px + $bottomOffset;
+    animation: move 6s ease infinite;
+  }
+  &:nth-child(even) {
+    background-position: top !important;
+    margin-left: -30px;
+    animation: move 8s ease infinite;
+  }
+
+
+  .rps-round{
+    width:65px;
+    font-family:'digital-7';
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+    line-height:40px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    vertical-align: middle;
+    background:url("/images/gamerps/round-cloud.png") no-repeat;
+    position: relative;
+    top: 70px;
+    left: 100px;
+    color: #00770a;
+    animation: move 6s ease infinite;
+    &.rps-round-notice{
+      background:url("/images/gamerps/round-cloud-notice.png") no-repeat;
+      color: white;
+    }
+  }
+}
+.rps-btn-group{
+  position:absolute;
+  bottom: 20px;
+  width: 1024px;
+  text-align: center;
+  .rps-btn{
+    background:url("/images/gamerps/btn_bg.png") no-repeat;
+    width: 367px;
+    height: 71px;
+    border: 0px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 20px;
+    animation: fadein $fadingTime;
+    -moz-animation: fadein $fadingTime; /* Firefox */
+    -webkit-animation: fadein $fadingTime; /* Safari and Chrome */
+    -o-animation: fadein $fadingTime;
+    cursor: pointer;
+    &:hover{
+      background:url("/images/gamerps/btn_bg_hover.png") no-repeat;
+      color:rgb(0, 110, 255)
+    }
+  }
+
+  @keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+    }
+    @-moz-keyframes fadein { /* Firefox */
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
+    @-webkit-keyframes fadein { /* Safari and Chrome */
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
+    @-o-keyframes fadein { /* Opera */
+        from {
+            opacity:0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+$horizontalOffset:10;
+.btn{
+  &.btn-custom{
+    padding: 0px;
+    width: 54px;
+    height: 54px;
+  }
+  
+  &.handPaper-btn{
+    position: relative;
+    top:60px;
+    left: 40px + $horizontalOffset;
+    background:url("/images/gamerps/handPaper.png") no-repeat;
+    &::before{
+      background:rgba(0, 195, 255, 0.582);
+    }
+    &.handPaper-btn--selected{
+     // background:url("/images/gamerps/handPaper-selected.png") no-repeat;
+      transform: rotateY(360deg);
+      -webkit-transform: rotateY(360deg);
+      -moz-transform: rotateY(360deg);
+      -ms-transform: rotateY(360deg);
+      -o-transform: rotateY(360deg);
+
+
+      -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0);
+    }
+  }
+  &.handPeace-btn{
+    position: relative;
+    top:10px;
+    left: 10px  + $horizontalOffset;
+    background:url("/images/gamerps/handPeace.png") no-repeat;
+    &::before{
+      background:rgba(0, 195, 255, 0.582);
+    }
+    &.handPeace-btn--selected{
+      //background:url("/images/gamerps/handPeace-selected.png") no-repeat;
+      transform: rotateY(360deg);
+      -webkit-transform: rotateY(360deg);
+      -moz-transform: rotateY(360deg);
+      -ms-transform: rotateY(360deg);
+      -o-transform: rotateY(360deg);
+
+      
+      -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0);
+    }
+  }
+  &.handRock-btn{
+    position: relative;
+    top:65px;
+    right:18px - $horizontalOffset;
+    background:url("/images/gamerps/handRock.png") no-repeat;
+    &::before{
+      background:rgba(0, 195, 255, 0.582);
+    }
+    &.handRock-btn--selected{
+     // background:url("/images/gamerps/handRock-selected.png") no-repeat;
+      transform: rotateY(360deg);
+      -webkit-transform: rotateY(360deg);
+      -moz-transform: rotateY(360deg);
+      -ms-transform: rotateY(360deg);
+      -o-transform: rotateY(360deg);
+
+      -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0);
+    }
+  }
+}
+
+.btn-rps-result{
+  position: absolute;
+  top:10px;
+  right:10px;
+  z-index: 999;
+  width: 61px;
+  height: 85px;
+  color: #ffffff00;
+  background:url("/images/gamerps/success.png") no-repeat;
+  &:hover{
+    background:url("/images/gamerps/success-hover.png") no-repeat;
+  }
+}
+
+.rps-menu-btn{
+  position: absolute;
+  right: 464px;
+  top: 32px;
+  img.rps-logo{
+    width: 67px;
+    margin-left: 20px;
+    z-index: 99;
+    position: relative;
+    &.logo-alert{
+      -webkit-animation: ring 4s .7s ease-in-out infinite;
+      -webkit-transform-origin: 50% 4px;
+      -moz-animation: ring 4s .7s ease-in-out infinite;
+      -moz-transform-origin: 50% 4px;
+      animation: ring 4s .7s ease-in-out infinite;
+      transform-origin: 50% 4px;
+    }
+  }
+  .lnr{
+    font-size: 14px;
+  }
+  .rps-btn-content{
+    padding: 10px;
+    //border: 2px #7e0000 solid;
+    padding-left: 30px;
+    margin-left: -25px;
+    z-index: 98;
+    border-radius: 8px;
+    color:#fff !important;
+    font-family: 'digital-7';
+    font-size: 16px;
+    &.rps-btn--alert{
+      background: #7e0000;
+    }
+    &.rps-btn--confirmed{
+      background: #00770a;
+    }
+  }
+}
+
+@-webkit-keyframes ring {
+  0% { -webkit-transform: rotateZ(0); }
+  1% { -webkit-transform: rotateZ(30deg); }
+  3% { -webkit-transform: rotateZ(-28deg); }
+  5% { -webkit-transform: rotateZ(34deg); }
+  7% { -webkit-transform: rotateZ(-32deg); }
+  9% { -webkit-transform: rotateZ(30deg); }
+  11% { -webkit-transform: rotateZ(-28deg); }
+  13% { -webkit-transform: rotateZ(26deg); }
+  15% { -webkit-transform: rotateZ(-24deg); }
+  17% { -webkit-transform: rotateZ(22deg); }
+  19% { -webkit-transform: rotateZ(-20deg); }
+  21% { -webkit-transform: rotateZ(18deg); }
+  23% { -webkit-transform: rotateZ(-16deg); }
+  25% { -webkit-transform: rotateZ(14deg); }
+  27% { -webkit-transform: rotateZ(-12deg); }
+  29% { -webkit-transform: rotateZ(10deg); }
+  31% { -webkit-transform: rotateZ(-8deg); }
+  33% { -webkit-transform: rotateZ(6deg); }
+  35% { -webkit-transform: rotateZ(-4deg); }
+  37% { -webkit-transform: rotateZ(2deg); }
+  39% { -webkit-transform: rotateZ(-1deg); }
+  41% { -webkit-transform: rotateZ(1deg); }
+
+  43% { -webkit-transform: rotateZ(0); }
+  100% { -webkit-transform: rotateZ(0); }
+}
+
+@-moz-keyframes ring {
+  0% { -moz-transform: rotate(0); }
+  1% { -moz-transform: rotate(30deg); }
+  3% { -moz-transform: rotate(-28deg); }
+  5% { -moz-transform: rotate(34deg); }
+  7% { -moz-transform: rotate(-32deg); }
+  9% { -moz-transform: rotate(30deg); }
+  11% { -moz-transform: rotate(-28deg); }
+  13% { -moz-transform: rotate(26deg); }
+  15% { -moz-transform: rotate(-24deg); }
+  17% { -moz-transform: rotate(22deg); }
+  19% { -moz-transform: rotate(-20deg); }
+  21% { -moz-transform: rotate(18deg); }
+  23% { -moz-transform: rotate(-16deg); }
+  25% { -moz-transform: rotate(14deg); }
+  27% { -moz-transform: rotate(-12deg); }
+  29% { -moz-transform: rotate(10deg); }
+  31% { -moz-transform: rotate(-8deg); }
+  33% { -moz-transform: rotate(6deg); }
+  35% { -moz-transform: rotate(-4deg); }
+  37% { -moz-transform: rotate(2deg); }
+  39% { -moz-transform: rotate(-1deg); }
+  41% { -moz-transform: rotate(1deg); }
+
+  43% { -moz-transform: rotate(0); }
+  100% { -moz-transform: rotate(0); }
+}
+
+@keyframes ring {
+  0% { transform: rotate(0); }
+  1% { transform: rotate(30deg); }
+  3% { transform: rotate(-28deg); }
+  5% { transform: rotate(34deg); }
+  7% { transform: rotate(-32deg); }
+  9% { transform: rotate(30deg); }
+  11% { transform: rotate(-28deg); }
+  13% { transform: rotate(26deg); }
+  15% { transform: rotate(-24deg); }
+  17% { transform: rotate(22deg); }
+  19% { transform: rotate(-20deg); }
+  21% { transform: rotate(18deg); }
+  23% { transform: rotate(-16deg); }
+  25% { transform: rotate(14deg); }
+  27% { transform: rotate(-12deg); }
+  29% { transform: rotate(10deg); }
+  31% { transform: rotate(-8deg); }
+  33% { transform: rotate(6deg); }
+  35% { transform: rotate(-4deg); }
+  37% { transform: rotate(2deg); }
+  39% { transform: rotate(-1deg); }
+  41% { transform: rotate(1deg); }
+
+  43% { transform: rotate(0); }
+  100% { transform: rotate(0); }
+}
+
+.random-btn{
+  width: 60px;
+  height: 60px;
+  img{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transition: all 0.1s ease-in-out 0s;
+    perspective: 500;
+    &:hover{
+      transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+    }
+  }
+}

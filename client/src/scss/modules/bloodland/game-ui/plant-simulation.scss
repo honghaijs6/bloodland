@@ -1,0 +1,585 @@
+.plant-simulation-list {
+    padding: 0px;
+  
+    .item {
+      width: 100%;
+      margin: 0px;
+      display: flex;
+      padding: 0px 10px 0px 10px;
+      cursor: pointer;
+  
+      &:hover {
+        background: #dfdfdf;
+      }
+  
+      @include border-direction();
+      @include no-content();
+  
+      .checkbox-item {
+        width: auto;
+        display: flex;
+  
+        .checkbox {
+          @include check-box();
+          margin-top: 2px;
+        }
+      }
+  
+      .i-10 {
+        width: 10%;
+        word-break: break-all;
+        @include border-direction();
+      }
+  
+      .i-20 {
+        width: 20%;
+        word-break: break-all;
+        @include border-direction();
+      }
+  
+      .i-25 {
+        width: 25%;
+        word-break: break-all;
+        @include border-direction();
+      }
+  
+      .i-30 {
+        width: 30%;
+        word-break: break-all;
+        @include border-direction();
+      }
+  
+      .i-40 {
+        width: 38%;
+        word-break: break-all;
+        @include border-direction();
+      }
+  
+      .i-50 {
+        width: 50%;
+        word-break: break-all;
+        @include border-direction();
+      }
+  
+      .i-60 {
+        width: 60%;
+        word-break: break-all;
+        @include border-direction();
+      }
+  
+      .i-100 {
+        width: 100%;
+        word-break: break-all;
+        @include border-direction();
+      }
+    }
+  
+    @mixin setScrollListWidth($width,$scrollbar-width) {
+      width: calc(#{$width} + #{$scrollbar-width});
+      width: -webkit-calc(#{$width} + #{$scrollbar-width});
+      width: -moz-calc(#{$width} + #{$scrollbar-width});
+    }
+  
+    &.top-bottom-padding-row-10px {
+      .i-10 {
+        padding: 10px 2px 10px 0px;
+      }
+  
+      .i-20 {
+        padding: 10px 2px 10px 0px;
+      }
+  
+      .i-25 {
+        padding: 10px 2px 10px 0px;
+      }
+  
+      .i-30 {
+        padding: 10px 2px 10px 0px;
+      }
+  
+      .i-40 {
+        padding: 10px 2px 10px 0px;
+      }
+  
+      .i-50 {
+        padding: 10px 2px 10px 0px;
+      }
+  
+      .i-60 {
+        padding: 13px 2px 10px 0px;
+      }
+      
+      .i-100 {
+        padding: 13px 2px 10px 0px;
+      }
+    }
+  
+    &.top-bottom-padding-row-5px {
+      .i-10 {
+        padding: 5px 2px 5px 0px;
+      }
+  
+      .i-20 {
+        padding: 5px 2px 5px 0px;
+      }
+  
+      .i-25 {
+        padding: 5px 2px 5px 0px;
+      }
+  
+      .i-30 {
+        padding: 5px 2px 5px 0px;
+      }
+  
+      .i-40 {
+        padding: 5px 2px 5px 0px;
+      }
+  
+      .i-50 {
+        padding: 5px 2px 5px 0px;
+      }
+  
+      .i-60 {
+        padding: 5px 2px 5px 0px;
+      }
+  
+      .i-100 {
+        padding: 5px 2px 5px 0px;
+      }
+    }
+  
+    &.top-bottom-padding-row-2px {
+      .i-10 {
+        padding: 2px 2px 2px 0px;
+      }
+  
+      .i-20 {
+        padding: 2px 2px 2px 0px;
+      }
+  
+      .i-25 {
+        padding: 2px 2px 2px 0px;
+      }
+  
+      .i-30 {
+        padding: 2px 2px 2px 0px;
+      }
+  
+      .i-40 {
+        padding: 2px 2px 2px 0px;
+      }
+  
+      .i-50 {
+        padding: 2px 2px 2px 0px;
+      }
+  
+      .i-60 {
+        padding: 2px 2px 2px 0px;
+      }
+      
+      .i-100 {
+        padding: 2px 2px 2px 0px;
+      }
+    }
+  
+    &.list-scrollable {
+      height: 387px;
+      @include custom-scrollbar();
+      border-bottom: $border2;
+      $scrollbar-width: 0px;
+  
+      .item {
+        padding: 0px 0px 0px 10px;
+  
+        .i-10 {
+          @include setScrollListWidth(10%, $scrollbar-width);
+        }
+  
+        .i-20 {
+          @include setScrollListWidth(20%, $scrollbar-width);
+        }
+  
+        .i-25 {
+          @include setScrollListWidth(25%, $scrollbar-width);
+        }
+  
+        .i-30 {
+          @include setScrollListWidth(30%, $scrollbar-width);
+        }
+  
+        .i-40 {
+          @include setScrollListWidth(40%, $scrollbar-width);
+        }
+  
+        .i-50 {
+          @include setScrollListWidth(50%, $scrollbar-width);
+        }
+  
+        .i-60 {
+          @include setScrollListWidth(60%, $scrollbar-width);
+        }
+  
+        .i-100 {
+          @include setScrollListWidth(100%, $scrollbar-width);
+        }
+  
+        &:first-child {
+          .i-10 {
+            @include setScrollListWidth(10%, $scrollbar-width);
+            padding-top: 7px;
+          }
+  
+          .i-20 {
+            @include setScrollListWidth(20%, $scrollbar-width);
+            padding-top: 7px;
+          }
+  
+          .i-25 {
+            @include setScrollListWidth(25%, $scrollbar-width);
+            padding-top: 7px;
+          }
+  
+          .i-30 {
+            @include setScrollListWidth(30%, $scrollbar-width);
+            padding-top: 7px;
+          }
+  
+          .i-40 {
+            @include setScrollListWidth(40%, $scrollbar-width);
+            padding-top: 7px;
+          }
+  
+          .i-50 {
+            @include setScrollListWidth(50%, $scrollbar-width);
+            padding-top: 7px;
+          }
+  
+          .i-60 {
+            @include setScrollListWidth(60%, $scrollbar-width);
+            padding-top: 7px;
+          }
+  
+          .i-100 {
+            @include setScrollListWidth(100%, $scrollbar-width);
+            padding-top: 7px;
+          }
+        }
+      }
+  
+    }
+  
+    .item-view-btn {
+      cursor: pointer;
+      background: #efeded;
+      border-radius: 5px;
+      border: none;
+      padding: 3px 10px 3px 10px;
+      text-align: right;
+      width: 60%;
+  
+      &:hover {
+        background: $background-color-1;
+        color: $font-color-2;
+      }
+    }
+  
+    input {
+      background: $background-color-8;
+      border-radius: 5px;
+      border: none;
+      padding: 3px 10px 3px 10px;
+      text-align: right;
+      width: 150px;
+    }
+}
+  
+.plant-simulation-list-new {
+padding: 0px;
+
+.item {
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    padding: 0px 10px 0px 10px;
+    cursor: pointer;
+
+    @include border-direction();
+    @include no-content();
+
+    .checkbox-item {
+    width: auto;
+    display: flex;
+
+    .checkbox {
+        @include check-box();
+        margin-top: 2px;
+    }
+    }
+
+    .i-10 {
+    width: 10%;
+    word-break: break-all;
+    @include border-direction();
+    }
+
+    .i-20 {
+    width: 20%;
+    word-break: break-all;
+    @include border-direction();
+    }
+
+    .i-25 {
+    width: 25%;
+    word-break: break-all;
+    @include border-direction();
+    }
+
+    .i-30 {
+    width: 30%;
+    word-break: break-all;
+    @include border-direction();
+    }
+
+    .i-40 {
+    width: 38%;
+    word-break: break-all;
+    @include border-direction();
+    }
+
+    .i-50 {
+    width: 50%;
+    word-break: break-all;
+    @include border-direction();
+    }
+
+    .i-60 {
+    width: 60%;
+    word-break: break-all;
+    @include border-direction();
+    }
+
+    .i-100 {
+    width: 100%;
+    word-break: break-all;
+    @include border-direction();
+    }
+}
+
+@mixin setScrollListWidth($width,$scrollbar-width) {
+    width: calc(#{$width} + #{$scrollbar-width});
+    width: -webkit-calc(#{$width} + #{$scrollbar-width});
+    width: -moz-calc(#{$width} + #{$scrollbar-width});
+}
+
+&.top-bottom-padding-row-10px {
+    .i-10 {
+    padding: 10px 2px 10px 0px;
+    }
+
+    .i-20 {
+    padding: 10px 2px 10px 0px;
+    }
+
+    .i-25 {
+    padding: 10px 2px 10px 0px;
+    }
+
+    .i-30 {
+    padding: 10px 2px 10px 0px;
+    }
+
+    .i-40 {
+    padding: 10px 2px 10px 0px;
+    }
+
+    .i-50 {
+    padding: 10px 2px 10px 0px;
+    }
+
+    .i-60 {
+    padding: 13px 2px 10px 0px;
+    }
+    
+    .i-100 {
+    padding: 13px 2px 10px 0px;
+    }
+}
+
+&.top-bottom-padding-row-5px {
+    .i-10 {
+    padding: 5px 2px 5px 0px;
+    }
+
+    .i-20 {
+    padding: 5px 2px 5px 0px;
+    }
+
+    .i-25 {
+    padding: 5px 2px 5px 0px;
+    }
+
+    .i-30 {
+    padding: 5px 2px 5px 0px;
+    }
+
+    .i-40 {
+    padding: 5px 2px 5px 0px;
+    }
+
+    .i-50 {
+    padding: 5px 2px 5px 0px;
+    }
+
+    .i-60 {
+    padding: 5px 2px 5px 0px;
+    }
+
+    .i-100 {
+    padding: 5px 2px 5px 0px;
+    }
+}
+
+&.top-bottom-padding-row-2px {
+    .i-10 {
+    padding: 2px 2px 2px 0px;
+    }
+
+    .i-20 {
+    padding: 2px 2px 2px 0px;
+    }
+
+    .i-25 {
+    padding: 2px 2px 2px 0px;
+    }
+
+    .i-30 {
+    padding: 2px 2px 2px 0px;
+    }
+
+    .i-40 {
+    padding: 2px 2px 2px 0px;
+    }
+
+    .i-50 {
+    padding: 2px 2px 2px 0px;
+    }
+
+    .i-60 {
+    padding: 2px 2px 2px 0px;
+    }
+    
+    .i-100 {
+    padding: 2px 2px 2px 0px;
+    }
+}
+
+&.list-scrollable {
+    height: 387px;
+    @include custom-scrollbar();
+    border-bottom: $border2;
+    $scrollbar-width: 0px;
+
+    .item {
+    padding: 0px 0px 0px 10px;
+
+    .i-10 {
+        @include setScrollListWidth(10%, $scrollbar-width);
+    }
+
+    .i-20 {
+        @include setScrollListWidth(20%, $scrollbar-width);
+    }
+
+    .i-25 {
+        @include setScrollListWidth(25%, $scrollbar-width);
+    }
+
+    .i-30 {
+        @include setScrollListWidth(30%, $scrollbar-width);
+    }
+
+    .i-40 {
+        @include setScrollListWidth(40%, $scrollbar-width);
+    }
+
+    .i-50 {
+        @include setScrollListWidth(50%, $scrollbar-width);
+    }
+
+    .i-60 {
+        @include setScrollListWidth(60%, $scrollbar-width);
+    }
+
+    .i-100 {
+        @include setScrollListWidth(100%, $scrollbar-width);
+    }
+
+    &:first-child {
+        .i-10 {
+        @include setScrollListWidth(10%, $scrollbar-width);
+        padding-top: 7px;
+        }
+
+        .i-20 {
+        @include setScrollListWidth(20%, $scrollbar-width);
+        padding-top: 7px;
+        }
+
+        .i-25 {
+        @include setScrollListWidth(25%, $scrollbar-width);
+        padding-top: 7px;
+        }
+
+        .i-30 {
+        @include setScrollListWidth(30%, $scrollbar-width);
+        padding-top: 7px;
+        }
+
+        .i-40 {
+        @include setScrollListWidth(40%, $scrollbar-width);
+        padding-top: 7px;
+        }
+
+        .i-50 {
+        @include setScrollListWidth(50%, $scrollbar-width);
+        padding-top: 7px;
+        }
+
+        .i-60 {
+        @include setScrollListWidth(60%, $scrollbar-width);
+        padding-top: 7px;
+        }
+
+        .i-100 {
+        @include setScrollListWidth(100%, $scrollbar-width);
+        padding-top: 7px;
+        }
+    }
+    }
+
+}
+
+.item-view-btn {
+    cursor: pointer;
+    background: #efeded;
+    border-radius: 5px;
+    border: none;
+    padding: 3px 10px 3px 10px;
+    text-align: right;
+    width: 75%;
+
+    &:hover {
+    background: $background-color-1;
+    color: $font-color-2;
+    }
+}
+
+input {
+    background: $background-color-8;
+    border-radius: 5px;
+    border: none;
+    padding: 3px 10px 3px 10px;
+    text-align: right;
+    width: 150px;
+}
+}

@@ -1,0 +1,24 @@
+.user-info {
+  display: flex;
+  margin: 0px 15px 10px 15px;
+  justify-content: center;
+
+  .lable-info {
+    text-align: left;
+    width: 120px;
+    margin-right: 5px;
+    color: $font-color-6;
+  }
+
+  .info-user {
+    width: calc(100% - 70px);
+    width: -webkit-calc(100% - 70px);
+    width: -moz-calc(100% - 70px);
+
+    color: $font-color-6;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 144px;;
+  }
+}

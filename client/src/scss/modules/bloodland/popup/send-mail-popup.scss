@@ -1,0 +1,68 @@
+
+.modal{
+  .modal-dialog{
+    &.custom-modal {
+      &.modal--send-mail {
+        @include set-modal-size(580px, auto);
+        .custom-modal-body {
+          .title-mail {
+            width: 100%;
+            padding: 5px;
+            display: flex;
+            height: 30px;
+
+            .to-user {
+              width: 33%;
+              align-items: center;
+              justify-content: center;
+              display: flex;
+
+              .to-user-name {
+                margin-right: 5px;
+                margin-left: 5px;
+              }
+            }
+
+            input {
+              border: none;
+              text-align: center;
+              height: 19px;
+              color: $font-color;
+              font-weight: bold;
+
+              &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                color: $font-color;
+                font-weight: bold;
+                opacity: 1; /* Firefox */
+              }
+
+              &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: $font-color;
+                font-weight: bold;
+              }
+
+              &::-ms-input-placeholder { /* Microsoft Edge */
+                color: $font-color;
+                font-weight: bold;
+              }
+            }
+
+            input.to-user {
+              width: 200px;
+            }
+
+            input.title-content {
+              width: 365px;
+            }
+            border-bottom: $border2;
+          }
+
+          .body-mail {
+            width: 100%;
+            height: calc(100% - 57.53);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.sp-item {
+  width: 200px;
+  height: 26px;
+  border: #CCCCCC 1px solid !important;
+  background: white;
+  color: #6c6d6d;
+  border-radius: 5px;
+  padding: 5px 10px 4px 10px;
+  font-weight: bolder;
+  cursor: pointer;
+  margin: 0px 0px 7px 0px;
+  font-size: 11px;
+  box-shadow: 0px 3px #CCCCCC;
+  -webkit-box-shadow: 0px 3px #CCCCCC;
+  text-align: center;
+
+  .sp-img {
+    float: left;
+
+    img {
+      width: auto;
+      height: 15px;
+      margin-right: 8px;
+    }
+  }
+
+  .sp-name {
+    float: right;
+  }
+
+  &.no-hover{
+    cursor: unset;
+    &:hover {
+      border: #CCCCCC 1px solid !important;
+      background: white;
+      color: #6c6d6d;
+      font-size: 11px;
+      box-shadow: 0px 3px #CCCCCC;
+      -webkit-box-shadow: 0px 3px #CCCCCC;
+    }
+  }
+
+  &:hover {
+    border: #990000 1px solid !important;
+    background: #AC0000;
+    box-shadow: 0px 4px #990000;
+    -webkit-box-shadow: 0px 4px #990000;
+    color: $font-color-2;
+  }
+}
